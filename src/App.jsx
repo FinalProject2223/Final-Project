@@ -1,3 +1,4 @@
+import SecondPart from "./components/SecondPart/SecondPart";
 import "./index.css";
 import Home from "./screens/Home";
 
