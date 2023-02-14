@@ -1,0 +1,33 @@
+.About_Text_1{
+    text-align: center;
+    margin-bottom: 72px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+.obyekt_1{
+    display: flex;
+}
+
+.zaga_1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: -2px;
+}
+
+
+.birinchi_img{
+    width: 60px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+
+.obyekt_2{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
