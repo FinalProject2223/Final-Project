@@ -5,7 +5,7 @@ import SecondPart from '../components/SecondPart/SecondPart';
 const Home = () => {
   return (
     <All>
-      
+      <SecondPart/>
     </All>
   )
 }
