@@ -12,11 +12,11 @@ const Header = () => {
           <img className="logo_png" src={logoImg} alt="" />
         </div>
         <div className="li_box">
-          <p>Курсы</p>
-          <p>Школы</p>
-          <p>Отзывы о школах</p>
-          <p>Акции школ</p>
-          <p>Блог</p>
+          <p className="p_text">Курсы</p>
+          <p className="p_text">Школы</p>
+          <p className="p_text">Отзывы о школах</p>
+          <p className="p_text">Акции школ</p>
+          <p className="p_text">Блог</p>
         </div>
       </div>
       <div className="button_container">

@@ -2,12 +2,12 @@ import React from "react";
 import "./SecondPart.css";
 const SecondPart = () => {
   return (
-    <div>
+    <div className="secondPart">
       <h2 className="About_Text_1">Наши преимущества</h2>
       <div className="container ">
         <div className="row">
           <div className="col-4">
-            <div>
+            <div  className="obyekti">
               <div className="obyekt_1">
                 <img className="birinchi_img" src="birinchi.png" alt="" />
                 <p className="zaga_1">
@@ -24,7 +24,7 @@ const SecondPart = () => {
             </div>
           </div>
           <div className="col-4">
-            <div>
+            <div className="obyekti">
               <div className="obyekt_1">
                 <img className="birinchi_img" src="ikinchi.png" alt="" />
                 <p className="zaga_1">
@@ -41,7 +41,7 @@ const SecondPart = () => {
             </div>
           </div>
           <div className="col-4">
-            <div>
+            <div className="obyekti">
               <div className="obyekt_1">
                 <img className="birinchi_img" src="ohirgi.png" alt="" />
                 <p className="zaga_1">
