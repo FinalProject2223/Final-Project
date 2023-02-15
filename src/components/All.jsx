@@ -9,7 +9,6 @@ export const All = ({ children }) => {
   return (
     <div>
       <Header />
-     
       {children}
       <Footer />
     </div>
