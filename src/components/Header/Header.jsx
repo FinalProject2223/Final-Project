@@ -1,8 +1,9 @@
 import React from "react";
-import "./Header.css";
 import logoImg from "../Img/Logo.png";
 import tradeImg from "../Img/trade.png";
 import loupeImg from "../Img/loupe.png";
+import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   return (
@@ -12,11 +13,15 @@ const Header = () => {
           <img className="logo_png" src={logoImg} alt="" />
         </div>
         <div className="li_box">
-          <p className="p_text">Курсы</p>
-          <p className="p_text">Школы</p>
-          <p className="p_text">Отзывы о школах</p>
-          <p className="p_text">Акции школ</p>
-          <p className="p_text">Блог</p>
+          <Link className="p_text" to="/">
+            Главная
+          </Link>
+          <Link className="p_text" to="/course">
+            Курсы
+          </Link>
+          <Link className="p_text" to="/previews">Обзоры</Link>
+          <Link className="p_text" to="/schools">Школы</Link>
+          <Link className="p_text" to="/fitback">Отзывы</Link>
         </div>
       </div>
       <div className="button_container">
@@ -24,7 +29,11 @@ const Header = () => {
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
-        <input className="input_search" type="text" placeholder="Искать курсы" />
+        <input
+          className="input_search"
+          type="text"
+          placeholder="Искать курсы"
+        />
       </div>
     </div>
   );
