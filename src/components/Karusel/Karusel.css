@@ -1,0 +1,15 @@
+.img_karusel{
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.slider_width{
+   width: 1200px;
+   margin: 30px;
+}
+
+.ortaga_opchiq{
+    display: flex;
+    justify-content: center;
+}
