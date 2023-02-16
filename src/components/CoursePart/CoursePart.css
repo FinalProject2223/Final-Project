@@ -1,0 +1,26 @@
+.course_top_text {
+    margin-top: 50px;
+}
+.courses_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.courses {
+    gap: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.another {
+    margin: 0 auto;
+    padding: 20px 0;
+
+    border-bottom: 10px solid var(--orange);
+    border-top: 10px solid var(--orange);
+    border-radius: 10px;
+
+    font-size: 40px;
+}

@@ -22,7 +22,7 @@ const Header = () => {
           </Link>
           <Link className="p_text" to="/previews">Обзоры</Link>
           <Link className="p_text" to="/schools">Школы</Link>
-          <Link className="p_text" to="/fitback">Отзывы</Link>
+          <Link className="p_text" to="/feedback">Отзывы</Link>
         </div>
       </div>
       <div className="button_container">
