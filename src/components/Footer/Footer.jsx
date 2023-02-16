@@ -1,5 +1,9 @@
 import React from 'react'
 import "./Footer.css"
+
+import logoImg from "../Img/mb-team_logo.png";
+
+
 const Footer = () => {
   return (
     <div>
@@ -60,8 +64,8 @@ const Footer = () => {
         <div className=" border_bor">
           <div className="">
             <div className="Footer_bootom">
-              <p className=' logo_foot'>Logo</p>
-              <p className='mt-2'>© 2021. Logo. Все права защищены</p>
+              <img className='logo_foot' src={logoImg} alt="" />
+              <p className='mt-2'>© 2023. MB-TEAM. Все права защищены</p>
             </div>
           </div>
           <div className="">

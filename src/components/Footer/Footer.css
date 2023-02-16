@@ -12,13 +12,12 @@
 .Footer{
     width: 100%;
     background-color: black;
-    padding: 15px;
+    padding: 10px;
     padding-top: 35px;
 }
 
 .father_categorias{
     color: #A6A6A6;
-
     font-weight: 200;
     
 }
@@ -27,21 +26,22 @@
     color: white;
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0px 0px 5px white;
     font-weight: 400;
 }
 
 .Footer_bootom{
     display: flex;
     color:  white;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .logo_foot{
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     margin-right: 20px;
- 
+    width: 55px;
+    filter: invert(1);
 }
 
 

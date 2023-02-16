@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .container_text {
   width: 50%;
@@ -30,6 +31,7 @@
   font-weight: 900;
   font-size: 34px;
   line-height: 47px;
+  margin-bottom: 30px;
 }
 .small_text {
     font-family: Arial, Helvetica, sans-serif;

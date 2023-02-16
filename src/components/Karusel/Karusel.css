@@ -11,9 +11,8 @@ box-shadow: 13px 13px 15px -3px rgba(157, 158, 159, 0.61);
 }
 
 .slider_width{
-    padding: 20px;
     background-color: #ffffff;
-   width: 1400px;
+   width: 80%;
    margin: 30px;
     margin-bottom: 50px;
    height: 250px;
@@ -26,10 +25,19 @@ box-shadow: 13px 13px 15px -3px rgba(157, 158, 159, 0.61);
 .slick-arrow {
     cursor: none;
 }
-
+.slider_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 1%;
+} 
 .slider_img_box {
     width:100px;
     background-color: #ffffff;
     padding: 0px 20px;
     height: 250px;
+    outline: none;
 }

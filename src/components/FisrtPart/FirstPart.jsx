@@ -7,12 +7,12 @@ const FirstPart = () => {
     <div className="firstPart">
       <div className="container_part">
         <div className="container_text">
-          <p className="big_text">Агрегатор онлайн-курсов</p>
-          <p className="small_text">
+          <div className="big_text">Агрегатор онлайн-курсов</div>
+          <div className="small_text">
             Сравниваем онлайн-курсы по digital и IT. Мы — каталог-отзовик
             курсов. Выбирайте курсы по отзывам, цене, продолжительности и другим
             критериям!
-          </p>
+          </div>
         </div>
         <div className="container_img">
           <img className="workingImg" src={working} alt="" />

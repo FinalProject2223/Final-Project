@@ -1,5 +1,5 @@
 import React from "react";
-import logoImg from "../Img/Logo.png";
+import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import loupeImg from "../Img/loupe.png";
 import { Link, NavLink } from "react-router-dom";
@@ -11,6 +11,7 @@ const Header = () => {
       <div className="menu_container">
         <div className="logo_box">
           <img className="logo_png" src={logoImg} alt="" />
+          <b className="logo_name"> MB-TEAM</b>
         </div>
         <div className="li_box">
           <Link className="p_text" to="/">
