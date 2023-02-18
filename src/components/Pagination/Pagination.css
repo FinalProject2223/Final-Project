@@ -1,0 +1,12 @@
+.page-link {
+    cursor: pointer;
+    color: black ! important;
+}
+.pagination {
+    
+  font-family: 'Montserrat', sans-serif;
+    margin: 0px 0px 30px! important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

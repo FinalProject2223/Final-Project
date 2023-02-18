@@ -7,6 +7,8 @@
   background: #f8f8f8;
   width: 100%;
   border-top: 1px solid #ededed;
+  
+  font-family: 'Montserrat', sans-serif;
 }
 .container_part {
   display: flex;
@@ -22,11 +24,12 @@
 .container_img {
   width: 50%;
   overflow: hidden;
-
+  display: flex;
+  justify-content: end;
 }
 
 .big_text {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 34px;
@@ -34,9 +37,10 @@
   margin-bottom: 30px;
 }
 .small_text {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
 line-height: 30px;
+width: 400px;
 }

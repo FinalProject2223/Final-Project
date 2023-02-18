@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap'); */
 
 
 *{
@@ -25,7 +25,8 @@
 .glav_p{
     color: white;
     font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
+    
+  font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
@@ -34,11 +35,14 @@
     color:  white;
     justify-content: center;
     align-items: center;
+    
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo_foot{
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    
+  font-family: 'Montserrat', sans-serif;
     margin-right: 20px;
     width: 55px;
     filter: invert(1);

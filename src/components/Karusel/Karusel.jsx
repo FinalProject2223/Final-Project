@@ -10,7 +10,7 @@ export const Karusel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 1000,
     autoplaySpeed: 3000,
     cssEase: "linear",
   };
@@ -29,7 +29,7 @@ export const Karusel = () => {
           </div>
           <div className="slider_img_box">
             <img
-              src="https://yt3.googleusercontent.com/5zbMq2YIFxg6mfQZ2WW-v5jk_zeY-HqqQ3rwwzGg9DIZMpz7U2VYG-w7p7FQVlCncEykgsSkkw=s900-c-k-c0x00ffffff-no-rj"
+              src="https://logobank.uz:8005/media/logos_png/CAMBRIDGE-01.png"
               alt=""
               className="img_karusel"
             />
@@ -43,14 +43,21 @@ export const Karusel = () => {
           </div>
           <div className="slider_img_box">
             <img
-              src="https://cdn.dribbble.com/users/2998321/screenshots/16243707/frame_85_4x.jpg"
+              src="https://www.afisha.uz/uploads/media/2020/11/0288234_m.png"
               alt=""
               className="img_karusel"
             />
           </div>
           <div className="slider_img_box">
             <img
-              src="https://kursi24.uz/upload/iblock/3fe/3fed21cae9c2e2a1cfd173f40697379d.jpg"
+              src="https://www.afisha.uz/uploads/media/2016/09/0718741_m.png"
+              alt=""
+              className="img_karusel"
+            />
+          </div>
+          <div className="slider_img_box">
+            <img
+              src="https://www.afisha.uz/uploads/media/2018/09/0050011_m.png"
               alt=""
               className="img_karusel"
             />

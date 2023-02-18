@@ -7,9 +7,9 @@ const FirstPart = () => {
     <div className="firstPart">
       <div className="container_part">
         <div className="container_text">
-          <div className="big_text">Агрегатор онлайн-курсов</div>
+          <div className="big_text">Агрегатор учебных курсов</div>
           <div className="small_text">
-            Сравниваем онлайн-курсы по digital и IT. Мы — каталог-отзовик
+            Сравниваем разные курсы по различным предметам. Мы — каталог-отзовик
             курсов. Выбирайте курсы по отзывам, цене, продолжительности и другим
             критериям!
           </div>

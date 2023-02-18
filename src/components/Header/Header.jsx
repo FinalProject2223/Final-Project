@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+
   return (
     <div className="header">
       <div className="menu_container">
@@ -20,9 +21,15 @@ const Header = () => {
           <Link className="p_text" to="/course">
             Курсы
           </Link>
-          <Link className="p_text" to="/previews">Обзоры</Link>
-          <Link className="p_text" to="/schools">Школы</Link>
-          <Link className="p_text" to="/feedback">Отзывы</Link>
+          <Link className="p_text" to="/previews">
+            Обзоры
+          </Link>
+          <Link className="p_text" to="/schools">
+            Школы
+          </Link>
+          <Link className="p_text" to="/feedback">
+            Отзывы
+          </Link>
         </div>
       </div>
       <div className="button_container">
@@ -30,11 +37,11 @@ const Header = () => {
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
-        <input
-          className="input_search"
-          type="text"
-          placeholder="Искать курсы"
-        />
+          <input
+            className="input_search"
+            type="text"
+            placeholder="Искать курсы"
+          />
       </div>
     </div>
   );

@@ -5,7 +5,9 @@ import All from './components/All';
 import {  Route, Routes } from "react-router-dom";
 import Course from "./screens/Course";
 
+
 function App() {
+
   return (
     <div className="App">
       <All>
