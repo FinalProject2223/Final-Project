@@ -32,4 +32,5 @@ box-shadow: 13px 13px 15px -3px rgba(157, 158, 159, 0.61);
     background-color: #ffffff;
     padding: 0px 20px;
     height: 250px;
+    outline: none;
 }
