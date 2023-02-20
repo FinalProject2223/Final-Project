@@ -1,12 +1,39 @@
 import React from "react";
 import "./Course.css";
+import { useDispatch, useSelector } from "react-redux";
 import star from "../../Img/star.png";
 import timchik from "../../Img/time.png";
 import calendar from "../../Img/calendar.png";
 import certificatchik from "../../Img/certificate.png";
 import suitcase from "../../Img/suitcase.png";
+import { addCourseToCompare } from "../../../redux/actions";
 
-const Course = ( {course, academy, grade, price, time, duration, type, certificate} ) => {
+const Course = ( { data, course, academy, grade, price, time, duration, type, certificate} ) => {
+
+  const dispatch = useDispatch();
+	const comparingList = useSelector((state) => state.comparing.comparingCoursesList);
+
+  const addToCompare = (card) => {
+    switch (comparingList.length) {
+			case 0:
+			case 1:
+				if (comparingList[0]?.id === data.id) {
+					alert("Выберите другой товар.");
+					return;
+				}
+				alert("Успешно добавлено.");
+				dispatch(addCourseToCompare(card));
+				// localStorage.setItem(
+				// 	"compare",
+				// 	JSON.stringify([...JSON.parse(localStorage.getItem("compare")), card])
+				// );
+				break;
+			case 2:
+				alert("Максимальное колличество достигнуто.");
+				break;
+		}
+	};
+
   return (
     <div className="course">
       <div className="course_container">
@@ -54,6 +81,9 @@ const Course = ( {course, academy, grade, price, time, duration, type, certifica
           </button>
           <button className="course_button cb2" type="button">
             Подробнее
+          </button>
+          <button onClick={() => addToCompare(data)} className="course_button cb3" type="button">
+            Добавить к сравнению
           </button>
         </div>
       </div>

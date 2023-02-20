@@ -8,7 +8,6 @@
 }
 
 
-
 .Footer{
     width: 100%;
     background-color: black;
@@ -25,17 +24,16 @@
 .glav_p{
     color: white;
     font-size: 24px;
-    
   font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 .Footer_bootom{
+  height: 80px;
     display: flex;
     color:  white;
     justify-content: center;
     align-items: center;
-    
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -45,6 +43,8 @@
   font-family: 'Montserrat', sans-serif;
     margin-right: 20px;
     width: 55px;
+    padding: 0 !important;
+    /* width: 55px; */
     filter: invert(1);
 }
 

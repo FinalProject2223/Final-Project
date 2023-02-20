@@ -23,7 +23,6 @@
 
 .container_img {
   width: 50%;
-  overflow: hidden;
   display: flex;
   justify-content: end;
 }
@@ -43,4 +42,9 @@ font-weight: 400;
 font-size: 18px;
 line-height: 30px;
 width: 400px;
+}
+.workingImg {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
 }

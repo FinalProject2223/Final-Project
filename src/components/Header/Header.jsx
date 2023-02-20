@@ -4,8 +4,16 @@ import tradeImg from "../Img/trade.png";
 import loupeImg from "../Img/loupe.png";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const comparingList = useSelector(
+		(state) => state.comparing.comparingCoursesList
+	);
+
+  const keryka = () => {
+    console.log(":)");
+  }
 
   return (
     <div className="header">
@@ -33,7 +41,10 @@ const Header = () => {
         </div>
       </div>
       <div className="button_container">
+        <Link to="/compare"> 
         <img className="trade_img" src={tradeImg} alt="" />
+        { comparingList.length === 0 ? (keryka()) : (<span>{comparingList.length}</span>)}
+        </Link>
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />

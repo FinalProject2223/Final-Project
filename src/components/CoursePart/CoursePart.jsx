@@ -9,7 +9,7 @@ import Pagination from "../Pagination/Pagination";
 import axios from "axios";
 
 const CoursePart = () => {
-  const [course, setCourse] = useState([]);
+  // const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
@@ -21,28 +21,18 @@ const CoursePart = () => {
 
   useEffect(() => {
     dispatch(coursesFetch());
-  }, []);
-
-  useEffect(() => {
-    const getCourses = async () => {
-      setLoading(true);
-      const res = await axios.get("http://localhost:3001/courses");
-      setCourse(res.data);
-      setLoading(false);
-    };
-
-    getCourses();
+    console.log(courses[2]);
   }, []);
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
-  const currentItems = course.slice(firstItemIndex, lastItemIndex);
+  const currentItems = courses.slice(firstItemIndex, lastItemIndex);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  // const nextPage = () => setCurrentPage((prev) => prev + 1);
 
-  const prevPage = () => setCurrentPage((prev) => prev - 1);
+  // const prevPage = () => setCurrentPage((prev) => prev - 1);
 
   const displayCourses = () =>
     currentItems.map(
@@ -58,6 +48,7 @@ const CoursePart = () => {
         certificate,
       }) => (
         <Course
+        data={courses[id - 1]}
           key={id}
           course={course}
           academy={academy}
@@ -76,41 +67,20 @@ const CoursePart = () => {
       <div className="slider_text course_top_text">Популярные курсы</div>
       <div className="courses_container">
         <div className="courses">
-          {/* <Course
-            course="Front-end"
-            academy="Adeynchik"
-            grade="5.0"
-            price="900.000"
-            time="15:00 - 19:00"
-            duration="6 monhts"
-            type="staji"
-            certificate="diplom"
-          /> */}
-
-          {loadingStatus === "loading" ? (
-            <Preloader />
-          ) : loadingStatus === "error" ? (
-            <div className="another">Error sending request</div>
-          ) : courses.length === 0 ? (
-            <div className="another">No course</div>
-          ) : (
-            displayCourses()
-          )}
+          {loadingStatus === "loading" ? (<Preloader />) : loadingStatus === "error" ? (<div className="another">Error sending request</div>) : courses.length === 0 ? (<div className="another">No course</div>) : (displayCourses())}
         </div>
       </div>
       <Pagination
         itemsPerPage={itemsPerPage}
-        totalItems={course.length}
+        totalItems={courses.length}
         paginate={paginate}
       />
-      
       {/* <button className="btn btn-primary" onClick={() => prevPage}>
         Prev Page
       </button>
       <button className="btn btn-primary ms-2" onClick={() => nextPage}>
         Next Page
       </button> */}
-
     </div>
   );
 };
