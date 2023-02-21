@@ -32,7 +32,7 @@ const CoursePart = () => {
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = courses.slice(firstItemIndex, lastItemIndex);
-  
+  const [dota, setDota] = useState([])
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // const nextPage = () => setCurrentPage((prev) => prev + 1);
@@ -67,14 +67,20 @@ const CoursePart = () => {
         />
       )
     );
-
+        function Webrazrabotka(a) {
+          let yengi = courses.filter(v=>{
+           return v.course == "Веб-разработчик"
+          })
+          
+          setDota(yengi)
+        }
    
 
   return (
     <div>
       <div className="middle">
       <div className="father_filter">
-        <button >Веб-разработчик</button>     
+        <button onClick={(v)=>Webrazrabotka(v.target.value)} >Веб-разработчик</button>     
         <button>Маркетинг</button>
         <button>Дизайн</button> 
         <button>Математика</button>
