@@ -24,3 +24,16 @@
 
     font-size: 40px;
 }
+
+.middle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.father_filter{
+    display: flex;
+    width: 600px;
+    justify-content: space-around;
+}

@@ -12,10 +12,15 @@ const CoursePart = () => {
   // const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [items, setItems] = useState([]);
   const [itemsPerPage] = useState(5);
 
+  
   const courses = useSelector((state) => state.courses.coursesList);
   const loadingStatus = useSelector((state) => state.courses.loadingStatus);
+
+
+
 
   const dispatch = useDispatch();
 
@@ -27,10 +32,11 @@ const CoursePart = () => {
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = courses.slice(firstItemIndex, lastItemIndex);
-
+  
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // const nextPage = () => setCurrentPage((prev) => prev + 1);
+
 
   // const prevPage = () => setCurrentPage((prev) => prev - 1);
 
@@ -62,8 +68,21 @@ const CoursePart = () => {
       )
     );
 
+   
+
   return (
     <div>
+      <div className="middle">
+      <div className="father_filter">
+        <button >Веб-разработчик</button>     
+        <button>Маркетинг</button>
+        <button>Дизайн</button> 
+        <button>Математика</button>
+        <button>Иностранный язык</button>
+        <button>Высшая наука</button>
+        <button>Финансы</button>
+      </div>
+      </div>
       <div className="slider_text course_top_text">Популярные курсы</div>
       <div className="courses_container">
         <div className="courses">
