@@ -1,0 +1,24 @@
+.noCompare {
+	margin: 116px 0;
+
+	color: var(--titleColor);
+	text-align: center;
+}
+
+.root {
+	display: flex;
+	justify-content: center;
+
+	padding: 20px;
+
+	
+}
+.description {
+	margin-top: 240px;
+	display: flex;
+	flex-direction: column;
+
+	background-color: var(--gray);
+
+	
+}

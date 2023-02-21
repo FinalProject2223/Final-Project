@@ -1,0 +1,165 @@
+{
+    "courses":[
+        {
+            "id": 1,
+            "course": "Веб-разработчик",
+            "academy": "Soff Study",
+            "grade": 4.5,
+            "price":"4750 рублей",
+            "time": "с 13:30 до 15:00",
+            "duration": "6 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 2,
+            "course": "Веб-разработчик",
+            "academy": "IT Academy",
+            "grade": 5.0,
+            "price": "6200 рублей",
+            "time": "с 18:30 до 20:00",
+            "duration": "7 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 3,
+            "course": "Английский язык",
+            "academy": "Everest Education",
+            "grade": 4.0,
+            "price": "3590 рублей",
+            "time": "с 16:00 до 17:30",
+            "duration": "3 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },{
+            "id": 4,
+            "course": "Веб-разработчик",
+            "academy": "Soff Study",
+            "grade": 4.5,
+            "price":"4750 рублей",
+            "time": "с 13:30 до 15:00",
+            "duration": "6 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 5,
+            "course": "Веб-разработчик",
+            "academy": "IT Academy",
+            "grade": 5.0,
+            "price": "6200 рублей",
+            "time": "с 18:30 до 20:00",
+            "duration": "7 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 6,
+            "course": "Английский язык",
+            "academy": "Everest Education",
+            "grade": 4.0,
+            "price": "3590 рублей",
+            "time": "с 16:00 до 17:30",
+            "duration": "3 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },{
+            "id": 7,
+            "course": "Веб-разработчик",
+            "academy": "Soff Study",
+            "grade": 4.5,
+            "price":"4750 рублей",
+            "time": "с 13:30 до 15:00",
+            "duration": "6 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 8,
+            "course": "Веб-разработчик",
+            "academy": "IT Academy",
+            "grade": 5.0,
+            "price": "6200 рублей",
+            "time": "с 18:30 до 20:00",
+            "duration": "7 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 9,
+            "course": "Английский язык",
+            "academy": "Everest Education",
+            "grade": 4.0,
+            "price": "3590 рублей",
+            "time": "с 16:00 до 17:30",
+            "duration": "3 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },{
+            "id": 10,
+            "course": "Веб-разработчик",
+            "academy": "Soff Study",
+            "grade": 4.5,
+            "price":"4750 рублей",
+            "time": "с 13:30 до 15:00",
+            "duration": "6 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 11,
+            "course": "Веб-разработчик",
+            "academy": "IT Academy",
+            "grade": 5.0,
+            "price": "6200 рублей",
+            "time": "с 18:30 до 20:00",
+            "duration": "7 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 12,
+            "course": "Английский язык",
+            "academy": "Everest Education",
+            "grade": 4.0,
+            "price": "3590 рублей",
+            "time": "с 16:00 до 17:30",
+            "duration": "3 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },{
+            "id": 13,
+            "course": "Веб-разработчик",
+            "academy": "Soff Study",
+            "grade": 4.5,
+            "price":"4750 рублей",
+            "time": "с 13:30 до 15:00",
+            "duration": "6 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 14,
+            "course": "Веб-разработчик",
+            "academy": "IT Academy",
+            "grade": 5.0,
+            "price": "6200 рублей",
+            "time": "с 18:30 до 20:00",
+            "duration": "7 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        },
+        {
+            "id": 15,
+            "course": "Английский язык",
+            "academy": "Everest Education",
+            "grade": 4.0,
+            "price": "3590 рублей",
+            "time": "с 16:00 до 17:30",
+            "duration": "3 месяца",
+            "type": "Стажировка",
+            "certificate": "Диплом"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap'); */
 
 
 *{
@@ -8,17 +8,15 @@
 }
 
 
-
 .Footer{
     width: 100%;
     background-color: black;
-    padding: 15px;
+    padding: 10px;
     padding-top: 35px;
 }
 
 .father_categorias{
     color: #A6A6A6;
-
     font-weight: 200;
     
 }
@@ -26,22 +24,28 @@
 .glav_p{
     color: white;
     font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0px 0px 5px white;
+  font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 .Footer_bootom{
+  height: 80px;
     display: flex;
     color:  white;
-
+    justify-content: center;
+    align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo_foot{
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    
+  font-family: 'Montserrat', sans-serif;
     margin-right: 20px;
- 
+    width: 55px;
+    padding: 0 !important;
+    /* width: 55px; */
+    filter: invert(1);
 }
 
 
