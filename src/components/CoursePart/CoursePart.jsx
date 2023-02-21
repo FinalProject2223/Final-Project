@@ -15,23 +15,22 @@ const CoursePart = () => {
   const [items, setItems] = useState([]);
   const [itemsPerPage] = useState(5);
 
+
   
   const courses = useSelector((state) => state.courses.coursesList);
   const loadingStatus = useSelector((state) => state.courses.loadingStatus);
-
-
-
+  
+  
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(coursesFetch());
-    console.log(courses[2]);
   }, []);
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
-  const currentItems = courses.slice(firstItemIndex, lastItemIndex);
+  const currentItems = items.slice(firstItemIndex, lastItemIndex);
   
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -39,10 +38,11 @@ const CoursePart = () => {
 
 
   // const prevPage = () => setCurrentPage((prev) => prev - 1);
-
+  
+  
   const displayCourses = () =>
-    currentItems.map(
-      ({
+  currentItems.map(
+    ({
         id,
         course,
         academy,
@@ -54,8 +54,8 @@ const CoursePart = () => {
         certificate,
       }) => (
         <Course
-        data={courses[id - 1]}
           key={id}
+          data={courses[id - 1]}
           course={course}
           academy={academy}
           grade={grade}
@@ -67,14 +67,25 @@ const CoursePart = () => {
         />
       )
     );
+    
+    let yengi;
 
+    const Webrazrabotka = () => {
+     yengi = courses.filter(v=>{
+       return v.course == "Веб-разработчик"
+      })
+
+      setItems(yengi)
+      
+      // console.log(yengi);
+    }
    
 
   return (
     <div>
       <div className="middle">
       <div className="father_filter">
-        <button >Веб-разработчик</button>     
+        <button onClick={()=>Webrazrabotka()}>Веб-разработчик</button>     
         <button>Маркетинг</button>
         <button>Дизайн</button> 
         <button>Математика</button>
