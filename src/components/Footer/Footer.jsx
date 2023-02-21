@@ -65,7 +65,7 @@ const Footer = () => {
           <div className="">
             <div className="Footer_bootom">
               <img className='logo_foot' src={logoImg} alt="" />
-              <p className='mt-2'>© 2023. MB-TEAM. Все права защищены</p>
+              <p className='mt-2'>© 2023. MBM-TEAM. Все права защищены</p>
             </div>
           </div>
           <div className="">

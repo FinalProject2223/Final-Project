@@ -62,6 +62,10 @@ const CoursePart = () => {
       )
     );
 
+    // currentItems.filter(item=>{
+    //   return item.course == 
+    // })
+
   return (
     <div>
       <div className="slider_text course_top_text">Популярные курсы</div>
