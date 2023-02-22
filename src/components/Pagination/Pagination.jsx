@@ -10,7 +10,7 @@ const Pagination = ({
 }) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+  for (let i =1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
