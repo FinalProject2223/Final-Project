@@ -54,7 +54,7 @@ const Header = () => {
             placeholder="Искать курсы"
           />
       </div>
-      <Link to={"/LoginPages"}><h1 className="mt-1">SingIn</h1></Link>
+      <Link to={"/SingInPages"}><h1 className="mt-1">SingIn</h1></Link>
     </div>
   );
 };
