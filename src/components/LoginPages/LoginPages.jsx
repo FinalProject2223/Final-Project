@@ -62,15 +62,15 @@ export default function LoginPages() {
                 :
                 <>
                   <MdCloudUpload color='#1363DF' size={60} />
-                  <h2 style={{ color: "#1363DF" }}>Rasm joylash</h2>
+                  <h2 style={{ color: "#1363DF" }}>Вставить фото</h2>
                 </>
               }
             </form>
           </main>
         </div>
 
-        <input onInput={(val) => { setName(val.target.value) }} className='input' type="text" placeholder='Ваша имя...' />
-        <input onInput={(val) => { setSurname(val.target.value) }} className='input' type="text" placeholder='Ваша фамилия...' />
+        <input onInput={(val) => { setName(val.target.value) }} className='input' type="text" placeholder='Ваше имя...' />
+        <input onInput={(val) => { setSurname(val.target.value) }} className='input' type="text" placeholder='Ваше фамилия...' />
         <input onInput={(val) => { setPassword(val.target.value) }} className='input' type="password" placeholder='Введите пароль...' />
       </div>
       <div className='col-6'>

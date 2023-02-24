@@ -3,7 +3,7 @@ import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import loupeImg from "../Img/loupe.png";
 import { Link, NavLink } from "react-router-dom";
-import "./Header.css";
+import "./Header.scss";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -54,7 +54,7 @@ const Header = () => {
             placeholder="Искать курсы"
           />
       </div>
-      <Link to={"/LoginPages"}><h1 className="mt-1">SingIn</h1></Link>
+      <Link to={"/LoginPages"}><h1 className="login_ex">Вход</h1></Link>
     </div>
   );
 };

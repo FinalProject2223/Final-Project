@@ -12,8 +12,168 @@ const CoursePart = () => {
   // const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [items, setItems] = useState([]);
-  const [itemsPerPage] = useState(6);
+  const [items, setItems] = useState([{
+    "id": 1,
+    "course": "Веб-разработчик",
+    "academy": "Soff Study",
+    "grade": 4.5,
+    "price":4750 ,
+    "time": "с 13:30 до 15:00",
+    "duration": "6 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 2,
+    "course": "Веб-разработчик",
+    "academy": "IT Academy",
+    "grade": 5.0,
+    "price": 6200,
+    "time": "с 18:30 до 20:00",
+    "duration": "7 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 3,
+    "course": "Английский язык",
+    "academy": "Everest Education",
+    "grade": 4.0,
+    "price": 3590,
+    "time": "с 16:00 до 17:30",
+    "duration": "3 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},{
+    "id": 4,
+    "course": "Веб-разработчик",
+    "academy": "Soff Study",
+    "grade": 4.5,
+    "price":4750,
+    "time": "с 13:30 до 15:00",
+    "duration": "6 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 5,
+    "course": "Веб-разработчик",
+    "academy": "IT Academy",
+    "grade": 5.0,
+    "price": 6200,
+    "time": "с 18:30 до 20:00",
+    "duration": "7 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 6,
+    "course": "Английский язык",
+    "academy": "Everest Education",
+    "grade": 4.0,
+    "price": 3590,
+    "time": "с 16:00 до 17:30",
+    "duration": "3 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},{
+    "id": 7,
+    "course": "Веб-разработчик",
+    "academy": "Soff Study",
+    "grade": 4.5,
+    "price":4750,
+    "time": "с 13:30 до 15:00",
+    "duration": "6 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 8,
+    "course": "Веб-разработчик",
+    "academy": "IT Academy",
+    "grade": 5.0,
+    "price": 6200,
+    "time": "с 18:30 до 20:00",
+    "duration": "7 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 9,
+    "course": "Английский язык",
+    "academy": "Everest Education",
+    "grade": 4.0,
+    "price": 3590,
+    "time": "с 16:00 до 17:30",
+    "duration": "3 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},{
+    "id": 10,
+    "course": "Веб-разработчик",
+    "academy": "Soff Study",
+    "grade": 4.5,
+    "price":4750,
+    "time": "с 13:30 до 15:00",
+    "duration": "6 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 11,
+    "course": "Веб-разработчик",
+    "academy": "IT Academy",
+    "grade": 5.0,
+    "price": 6200,
+    "time": "с 18:30 до 20:00",
+    "duration": "7 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 12,
+    "course": "Английский язык",
+    "academy": "Everest Education",
+    "grade": 4.0,
+    "price": 3590,
+    "time": "с 16:00 до 17:30",
+    "duration": "3 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},{
+    "id": 13,
+    "course": "Веб-разработчик",
+    "academy": "Soff Study",
+    "grade": 4.5,
+    "price":4750,
+    "time": "с 13:30 до 15:00",
+    "duration": "6 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 14,
+    "course": "Веб-разработчик",
+    "academy": "IT Academy",
+    "grade": 5.0,
+    "price": 6200,
+    "time": "с 18:30 до 20:00",
+    "duration": "7 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+},
+{
+    "id": 15,
+    "course": "Английский язык",
+    "academy": "Everest Education",
+    "grade": 4.0,
+    "price": 3590,
+    "time": "с 16:00 до 17:30",
+    "duration": "3 месяца",
+    "type": "Стажировка",
+    "certificate": "Диплом"
+}]);
+  const [itemsPerPage] = useState(5);
 
   let courses = useSelector((state) => state.courses.coursesList);
   let loadingStatus = useSelector((state) => state.courses.loadingStatus);
@@ -24,9 +184,6 @@ const CoursePart = () => {
 
   useEffect(() => {
     dispatch(coursesFetch());
-
-    setItems(courses)
-    console.log(courses , '=>courses');
   }, []);
 
   const lastItemIndex = currentPage * itemsPerPage;
@@ -104,17 +261,16 @@ const CoursePart = () => {
       <div className="middle">
 
       <div className="father_filter">
-        <button onClick={()=>Webrazrabotka()}>Веб-разработчик</button>     
-        <button>Маркетинг</button>
-        <button>Дизайн</button> 
-        <button>Математика</button>
-        <button onClick={()=>English()}>Иностранный язык</button>
-        <button>Высшая наука</button>
-        <button>Финансы</button>
+        <button className="course-filter-button" onClick={()=>Webrazrabotka()}>Технологии</button>     
+        <button className="course-filter-button">Маркетинг</button>
+        <button className="course-filter-button">Дизайн</button> 
+        <button className="course-filter-button">Математика</button>
+        <button className="course-filter-button" onClick={()=>English()}>Иностранный язык</button>
+        <button className="course-filter-button">Высшая наука</button>
+        <button className="course-filter-button">Финансы</button>
       </div>
 
       </div>
-      <div className="slider_text course_top_text">Популярные курсы</div>
       <div className="courses_container">
         <div className="courses">
           {loadingStatus === "loading" ? (<Preloader />) : loadingStatus === "error" ? (<div className="another">Error sending request</div>) : courses.length === 0 ? (<div className="another">No course</div>) : (displayCourses())}
