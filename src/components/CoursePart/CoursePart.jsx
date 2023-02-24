@@ -13,12 +13,10 @@ const CoursePart = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [items, setItems] = useState([]);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(6);
 
-
-  
-  const courses = useSelector((state) => state.courses.coursesList);
-  const loadingStatus = useSelector((state) => state.courses.loadingStatus);
+  let courses = useSelector((state) => state.courses.coursesList);
+  let loadingStatus = useSelector((state) => state.courses.loadingStatus);
   
   
 
@@ -26,12 +24,18 @@ const CoursePart = () => {
 
   useEffect(() => {
     dispatch(coursesFetch());
+
+    setItems(courses)
+    console.log(courses , '=>courses');
   }, []);
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
+
+
   const currentItems = items.slice(firstItemIndex, lastItemIndex);
-  
+  console.log(currentItems);
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // const nextPage = () => setCurrentPage((prev) => prev + 1);
@@ -54,8 +58,8 @@ const CoursePart = () => {
         certificate,
       }) => (
         <Course
-          key={id}
           data={courses[id - 1]}
+          key={id}
           course={course}
           academy={academy}
           grade={grade}
@@ -68,7 +72,12 @@ const CoursePart = () => {
       )
     );
     
-    let yengi;
+    let yengi
+
+
+
+
+ 
 
     const Webrazrabotka = () => {
      yengi = courses.filter(v=>{
@@ -89,9 +98,11 @@ const CoursePart = () => {
     }
    
 
+
   return (
     <div>
       <div className="middle">
+
       <div className="father_filter">
         <button onClick={()=>Webrazrabotka()}>Веб-разработчик</button>     
         <button>Маркетинг</button>
@@ -101,6 +112,7 @@ const CoursePart = () => {
         <button>Высшая наука</button>
         <button>Финансы</button>
       </div>
+
       </div>
       <div className="slider_text course_top_text">Популярные курсы</div>
       <div className="courses_container">

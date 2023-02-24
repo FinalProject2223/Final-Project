@@ -20,7 +20,7 @@ const Header = () => {
       <div className="menu_container">
         <div className="logo_box">
           <img className="logo_png" src={logoImg} alt="" />
-          <b className="logo_name"> MB-TEAM</b>
+          <b className="logo_name"> MBM-TEAM</b>
         </div>
         <div className="li_box">
           <Link className="p_text" to="/">
@@ -54,6 +54,7 @@ const Header = () => {
             placeholder="Искать курсы"
           />
       </div>
+      <Link to={"/LoginPages"}><h1 className="mt-1">SingIn</h1></Link>
     </div>
   );
 };
