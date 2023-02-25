@@ -12,10 +12,10 @@ const CoursePart = () => {
   // const [course, setCourse] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [items, setItems] = useState([]);
+ 
   const [itemsPerPage] = useState(5);
 
-
+  const [items, setItems] = useState([])
   
   const courses = useSelector((state) => state.courses.coursesList);
   const loadingStatus = useSelector((state) => state.courses.loadingStatus);
@@ -26,6 +26,7 @@ const CoursePart = () => {
 
   useEffect(() => {
     dispatch(coursesFetch());
+
   }, []);
 
   const lastItemIndex = currentPage * itemsPerPage;
@@ -68,6 +69,8 @@ const CoursePart = () => {
       )
     );
     
+
+    
     let yengi;
 
     const Webrazrabotka = () => {
@@ -81,12 +84,16 @@ const CoursePart = () => {
     }
 
     function English() {
-      yengi = courses.filter(v=>{
+    let  yengi = courses.filter(v=>{
         return v.course == "Английский язык"
        })
  
        setItems(yengi)
     }
+   
+   
+    
+
    
 
   return (
