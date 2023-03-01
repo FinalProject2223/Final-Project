@@ -260,7 +260,7 @@ const CoursePart = () => {
     <div>
       <div className="middle">
 
-      <div className="father_filter">
+      <div className="father_filter" id="#123">
         <button className="course-filter-button" onClick={()=>Webrazrabotka()}>Технологии</button>     
         <button className="course-filter-button">Маркетинг</button>
         <button className="course-filter-button">Дизайн</button> 
@@ -280,6 +280,7 @@ const CoursePart = () => {
         itemsPerPage={itemsPerPage}
         totalItems={courses.length}
         paginate={paginate}
+
       />
       {/* <button className="btn btn-primary" onClick={() => prevPage}>
         Prev Page
