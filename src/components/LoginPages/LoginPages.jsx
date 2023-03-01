@@ -5,7 +5,7 @@ import { MdCloudUpload } from 'react-icons/md'
 import './shahar.css'
 import axios from 'axios'
 import ImgLogo from '../Img/mb-team_logo.png'
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 
 
@@ -16,7 +16,8 @@ export default function LoginPages() {
   const [Password, setPassword] = useState(null)
   const [Password2, setPassword2] = useState(null)
   const [Border, setBorder] = useState()
-  const [Border2 , setBorder2] = useState()
+  const [Border2, setBorder2] = useState()
+  const [Loading, setLoading] = useState(false)
 
   const naviget = useNavigate()
 
@@ -36,6 +37,7 @@ export default function LoginPages() {
   }
 
   function Yuborish() {
+    setLoading(true)
     if (Password != null && Password2 != null && Name != null && image != null) {
       if (Password == Password2) {
         axios.post("https://63905b3f65ff41831110b776.mockapi.io/api/todo", {
@@ -47,21 +49,24 @@ export default function LoginPages() {
           .then(res => {
             console.log(res.data);
           })
-      toast.success("Malumot Yuborildi")
-      naviget("/SingInPages")
-      setBorder2("")
+        toast.success("Malumot Yuborildi")
+        naviget("/SingInPages")
+        setBorder2("")
+        setLoading(false)
       }
       else {
         // alert("hato tekshirib qaytadan parol kiriting")
         setBorder("red")
-      toast.error("2ta marta tergan paroliz birbiriga o`hshamayapti tekshirib qaytadan tering")
-      setBorder2("")
+        toast.error("2ta marta tergan paroliz birbiriga o`hshamayapti tekshirib qaytadan tering")
+        setBorder2("")
+        setLoading(false)
       }
     }
-    else{
+    else {
       setBorder("red")
       setBorder2("red")
       toast.error("Qizil Rangli burchaklani toldiring")
+      setLoading(false)
     }
 
   }
@@ -100,7 +105,7 @@ export default function LoginPages() {
       </div>
       <div className='col-12 d-flex align-items-center justify-content-around'>
         <img className='ImgLogo1' src={ImgLogo} alt="mb-team_logo" />
-        <button className='ButtomYuborish' onClick={Yuborish}>Сохранить информацию</button>
+        <button className='ButtomYuborish' onClick={Yuborish}>{Loading ? "Loading..." : "Сохранить информацию"}</button>
         <img className='ImgLogo2' src={ImgLogo} alt="mb-team_logo" />
       </div>
     </div>
