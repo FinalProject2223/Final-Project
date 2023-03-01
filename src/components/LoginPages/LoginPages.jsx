@@ -40,11 +40,11 @@ export default function LoginPages() {
     setLoading(true)
     if (Password != null && Password2 != null && Name != null && image != null) {
       if (Password == Password2) {
-        axios.post("https://63905b3f65ff41831110b776.mockapi.io/api/todo", {
-          img: image,
-          password: Password,
-          Surname: Surname,
-          name: Name
+          axios.post("https://63905b3f65ff41831110b776.mockapi.io/api/todo", {
+            img: image,
+            password: Password,
+            Surname: Surname,
+            name: Name
         })
           .then(res => {
             console.log(res.data);
