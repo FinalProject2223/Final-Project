@@ -2,7 +2,6 @@
   width: 95%;
   display: flex;
   margin: 0 5%;
-  
   font-family: 'Montserrat', sans-serif;
 }
 .link {
@@ -41,7 +40,7 @@
   align-items: center;
   gap: 40px;
   font-size: 15px;
-
+  
   font-weight: 700;
   .p_text {
     cursor: pointer;
@@ -91,17 +90,17 @@ span {
   
   top: 20%;
   right: 19%;
-
+  
   z-index: 1;
   width: 20px;
   height: 20px;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   border-radius: 50%;
-
+  
   font-family: 'Montserrat', sans-serif;
   color: #ffff;
   background-color: #47B5FF;
@@ -116,4 +115,19 @@ span {
   height: 100%;
   font-size: 20px;
   text-decoration: none !important;
+}
+.auth_btn {
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: #47B5FF;
+  color: #ededed;
+  font-weight: 700;
+  height: 30px;
+}
+.cnt_ath_btn {
+  display: flex;
+  height: 73px;
+  margin-left: 20px;
+  align-items: center;
 }

@@ -1,20 +1,35 @@
-.row{
-    background-color: #DFF6FF;
+.sign_in_pages{
+    background-color:#FFF;
+    height: 100vh;
+    width: 100%;
 }
 
 .input {
-    width: 620px;
-    height: 71px;
-    margin: 30px 0px 5px 20px;
-    background: #47B5FF;
-    border-bottom: 4px solid #1363DF;
+    width: 650px;
+    height: 60px;
+    background: #47b5ff;
+    margin-top: 25px;
+    border: none;
+    border-bottom: 4px solid #1363df;
     border-radius: 8px;
-    font-size: 50px;
+    font-size: 30px;
     outline: none;
     padding-left: 10px;
-    color: #06283D;
+    color: #000000;
 }
-
+.partik {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.inputs_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 0px 25px;
+}
 .ImgLogo1 {
     width: 106px;
     height: 106px;
@@ -28,12 +43,22 @@
 } 
 
  .ButtomYuborish {
-    width: 735px;
-    height: 100px;
-    background: #06283D;
-    border-radius: 16px;
-    color: rgba(71, 181, 255, 1);
-    font-size: 50px;
+    width: 450px;
+  height: 60px;
+  background: #06283d;
+  border-radius: 16px;
+  color: rgba(71, 181, 255, 1);
+  font-size: 30px;
+  margin-top: 60px;
+} 
+.ButtomYuborish2 {
+  margin-top: 25px;  
+  width: 650px;
+  height: 60px;
+  background: #06283d;
+  border-radius: 16px;
+  color: rgba(71, 181, 255, 1);
+  font-size: 30px;
 } 
  .ImgRight{
     width: 100%;
