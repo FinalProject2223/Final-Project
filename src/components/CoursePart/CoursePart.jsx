@@ -1,5 +1,5 @@
 import React from "react";
-import "./CoursePart.css";
+import "./CoursePart.scss";
 import Course from "./Course/Course";
 import Preloader from "../Preloader/index";
 import { useState, useEffect } from "react";
