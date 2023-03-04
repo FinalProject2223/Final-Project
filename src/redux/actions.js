@@ -33,6 +33,10 @@ const coursesFetching = createAction("COURSES_FETCHING");
 const coursesFetched = createAction("COURSES_FETCHED");
 const coursesFetchingError = createAction("COURSES_FETCHING_ERROR");
 
+
+// export const authTrueFetching = createAction("AUTH_TRUE");
+// export const authFalseFetching = createAction("AUTH_FALSE");
+
 export const addCourseToCompare = createAction("COURSE_ADD_TO_COMPARE");
 export const removeCourseFromCompare = createAction("COURSE_DELETE_FROM_COMPARE");
 

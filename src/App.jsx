@@ -4,11 +4,16 @@ import Home from "./screens/Home";
 import All from './components/All';
 import {  Route, Routes } from "react-router-dom";
 import Course from "./screens/Course";
+import Reviews from "./screens/Reviews";
+import Feedback from "./screens/Feedback";
+import Schools from "./screens/Schools";
+import Cabinet from "./screens/Cabinet";
 import Compare from "./screens/ComparePage/index";
 import LoginPages from "./components/LoginPages/LoginPages";
 import SingIn from "./components/SingIn/SingIn";
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import MorePages from "./components/MorePages/MorePages";
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -20,6 +25,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
         <Route path="/compare" element={<Compare />} />
+        <Route path="/reviews" element={<Reviews/>}/>
+        <Route path="/feedback" element={<Feedback />}/>
+        <Route path="/schools" element={<Schools />}/>
+        <Route path="/cabinet" element={<Cabinet />}/>
+        <Route path="/More/:id" element={<MorePages />}/>
         </Route>
         <Route path="/LoginPages" element={<LoginPages />}/>
         <Route path="/SingInPages" element={<SingIn />}/>
