@@ -23,14 +23,15 @@ export default function SingIn() {
     // console.log(userAuth + "=> mbm");
     axios.get("https://63905b3f65ff41831110b776.mockapi.io/api/users")
       .then((res) => {
-        let result = res.data.some(
+        let result = res.data.find(
           (item) => item.password == Password && item.email == Email
         );
         if (result) {
           toast.success("Поздравляю вы вошли в профиль");
           naviget("/");
           setLoading(false);
-    dispatch(authTrueFetching());
+    // dispatch(authTrueFetching());
+     localStorage.setItem("User" , JSON.stringify(result))
         } else {
           toast.error("Данная почта или пароль отсутствует");
           // toast.loading("Bunday Ism va Parol Yoq")

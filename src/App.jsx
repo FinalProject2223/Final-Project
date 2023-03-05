@@ -12,6 +12,7 @@ import Compare from "./screens/ComparePage/index";
 import LoginPages from "./components/LoginPages/LoginPages";
 import SingIn from "./components/SingIn/SingIn";
 import { ToastContainer } from 'react-toastify';
+import MorePages from "./components/MorePages/MorePages";
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/feedback" element={<Feedback />}/>
         <Route path="/schools" element={<Schools />}/>
         <Route path="/cabinet" element={<Cabinet />}/>
+        <Route path="/More/:id" element={<MorePages />}/>
         </Route>
         <Route path="/LoginPages" element={<LoginPages />}/>
         <Route path="/SingInPages" element={<SingIn />}/>

@@ -14,12 +14,12 @@ const Header = () => {
     (state) => state.comparing.comparingCoursesList
   );
 
-  const userAuth = useSelector((state) => state.auth.authList);
+  let localstorage = JSON.parse(localStorage.getItem("User"))
+  // const userAuth = useSelector((state) => state.auth.authList);
 
   
 
   const keryka = () => {
-    console.log(userAuth);
   };
 
   return (
@@ -67,11 +67,14 @@ const Header = () => {
       </div>
             
       <div className="cnt_ath_btn">
-        {userAuth === "false" ? (
+        {localstorage ?
+        (<Link to={"/cabinet"}>
+        <button className="auth_btn">Профиль</button>
+      </Link>) 
+         :
+        (
         <Link to={"/SingInPages"}>
           <button className="auth_btn">Вход</button>
-        </Link>) : (<Link to={"/cabinet"}>
-          <button className="auth_btn">Профиль</button>
         </Link>)}
       </div>
     </div>

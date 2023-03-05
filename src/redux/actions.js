@@ -1,8 +1,8 @@
 import { createAction } from "@reduxjs/toolkit";
 import { getCourses } from "../api/getCourses";
-import { postCourses } from "../api/postCourses";
-import { deleteCourses } from "../api/deleteCourses";
-import { patchCourses } from "../api/patchCourses";
+// import { postCourses } from "../api/postCourses";
+// import { deleteCourses } from "../api/deleteCourses";
+// import { patchCourses } from "../api/patchCourses";
 
 export const coursesFetch = () => async (dispatch) => {
 	try {
@@ -34,8 +34,8 @@ const coursesFetched = createAction("COURSES_FETCHED");
 const coursesFetchingError = createAction("COURSES_FETCHING_ERROR");
 
 
-export const authTrueFetching = createAction("AUTH_TRUE");
-export const authFalseFetching = createAction("AUTH_FALSE");
+// export const authTrueFetching = createAction("AUTH_TRUE");
+// export const authFalseFetching = createAction("AUTH_FALSE");
 
 export const addCourseToCompare = createAction("COURSE_ADD_TO_COMPARE");
 export const removeCourseFromCompare = createAction("COURSE_DELETE_FROM_COMPARE");

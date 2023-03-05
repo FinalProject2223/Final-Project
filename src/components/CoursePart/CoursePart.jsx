@@ -1,293 +1,133 @@
 import React from "react";
-import "./CoursePart.scss";
-import Course from "./Course/Course";
-import Preloader from "../Preloader/index";
+import "./CoursePart.css";
+import img from '../Img/star.png'
+import imgtime from '../Img/time.png'
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { coursesFetch } from "../../redux/actions";
+// import { useDispatch, useSelector } from "react-redux";
+// import { coursesFetch } from "../../redux/actions";
 import Pagination from "../Pagination/Pagination";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CoursePart = () => {
-  // const [course, setCourse] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [items, setItems] = useState([{
-    "id": 1,
-    "course": "Веб-разработчик",
-    "academy": "Soff Study",
-    "grade": 4.5,
-    "price":4750 ,
-    "time": "с 13:30 до 15:00",
-    "duration": "6 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 2,
-    "course": "Веб-разработчик",
-    "academy": "IT Academy",
-    "grade": 5.0,
-    "price": 6200,
-    "time": "с 18:30 до 20:00",
-    "duration": "7 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 3,
-    "course": "Английский язык",
-    "academy": "Everest Education",
-    "grade": 4.0,
-    "price": 3590,
-    "time": "с 16:00 до 17:30",
-    "duration": "3 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},{
-    "id": 4,
-    "course": "Веб-разработчик",
-    "academy": "Soff Study",
-    "grade": 4.5,
-    "price":4750,
-    "time": "с 13:30 до 15:00",
-    "duration": "6 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 5,
-    "course": "Веб-разработчик",
-    "academy": "IT Academy",
-    "grade": 5.0,
-    "price": 6200,
-    "time": "с 18:30 до 20:00",
-    "duration": "7 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 6,
-    "course": "Английский язык",
-    "academy": "Everest Education",
-    "grade": 4.0,
-    "price": 3590,
-    "time": "с 16:00 до 17:30",
-    "duration": "3 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},{
-    "id": 7,
-    "course": "Веб-разработчик",
-    "academy": "Soff Study",
-    "grade": 4.5,
-    "price":4750,
-    "time": "с 13:30 до 15:00",
-    "duration": "6 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 8,
-    "course": "Веб-разработчик",
-    "academy": "IT Academy",
-    "grade": 5.0,
-    "price": 6200,
-    "time": "с 18:30 до 20:00",
-    "duration": "7 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 9,
-    "course": "Английский язык",
-    "academy": "Everest Education",
-    "grade": 4.0,
-    "price": 3590,
-    "time": "с 16:00 до 17:30",
-    "duration": "3 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},{
-    "id": 10,
-    "course": "Веб-разработчик",
-    "academy": "Soff Study",
-    "grade": 4.5,
-    "price":4750,
-    "time": "с 13:30 до 15:00",
-    "duration": "6 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 11,
-    "course": "Веб-разработчик",
-    "academy": "IT Academy",
-    "grade": 5.0,
-    "price": 6200,
-    "time": "с 18:30 до 20:00",
-    "duration": "7 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 12,
-    "course": "Английский язык",
-    "academy": "Everest Education",
-    "grade": 4.0,
-    "price": 3590,
-    "time": "с 16:00 до 17:30",
-    "duration": "3 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},{
-    "id": 13,
-    "course": "Веб-разработчик",
-    "academy": "Soff Study",
-    "grade": 4.5,
-    "price":4750,
-    "time": "с 13:30 до 15:00",
-    "duration": "6 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 14,
-    "course": "Веб-разработчик",
-    "academy": "IT Academy",
-    "grade": 5.0,
-    "price": 6200,
-    "time": "с 18:30 до 20:00",
-    "duration": "7 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-},
-{
-    "id": 15,
-    "course": "Английский язык",
-    "academy": "Everest Education",
-    "grade": 4.0,
-    "price": 3590,
-    "time": "с 16:00 до 17:30",
-    "duration": "3 месяца",
-    "type": "Стажировка",
-    "certificate": "Диплом"
-}]);
-  const [itemsPerPage] = useState(5);
+  const [Data, setData] = useState([])
+  const [Data2, setData2] = useState([])
 
-  let courses = useSelector((state) => state.courses.coursesList);
-  let loadingStatus = useSelector((state) => state.courses.loadingStatus);
-  
-  
-
-  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(coursesFetch());
+    axios.get("https://api.npoint.io/f62bee9ee0f889870333")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data)
+        setData2(res.data)
+
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }, []);
 
-  const lastItemIndex = currentPage * itemsPerPage;
-  const firstItemIndex = lastItemIndex - itemsPerPage;
+  function Wed() {
+    let categoriya = Data2.filter((res)=>{
+     return res.categoriya == 'Web-design'
+    })
+    console.log(categoriya);
+    setData(categoriya)
+  }
 
+  function Inostrani() {
+    let categoriya = Data2.filter((res)=>{
+      return res.categoriya == 'foreign language'
+     })
+     console.log(categoriya);
+     setData(categoriya)
+  }
 
-  const currentItems = items.slice(firstItemIndex, lastItemIndex);
-  console.log(currentItems);
+  function GrafichiskiyDizayn() {
+    let categoriya = Data2.filter((res)=>{
+      return res.categoriya == 'graphic-design'
+     })
+     console.log(categoriya);
+     setData(categoriya)
+  }
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  // const nextPage = () => setCurrentPage((prev) => prev + 1);
-
-
-  // const prevPage = () => setCurrentPage((prev) => prev - 1);
-  
-  
-  const displayCourses = () =>
-  currentItems.map(
-    ({
-        id,
-        course,
-        academy,
-        grade,
-        price,
-        time,
-        duration,
-        type,
-        certificate,
-      }) => (
-        <Course
-          data={courses[id - 1]}
-          key={id}
-          course={course}
-          academy={academy}
-          grade={grade}
-          price={price}
-          time={time}
-          duration={duration}
-          type={type}
-          certificate={certificate}
-        />
-      )
-    );
-    
-    let yengi
-
-
-
-
- 
-
-    const Webrazrabotka = () => {
-     yengi = courses.filter(v=>{
-       return v.course == "Веб-разработчик"
-      })
-
-      setItems(yengi)
-      
-      // console.log(yengi);
+  function More(params) {
+    navigate(`/More/${params.id}`,
+    {
+      state: params
     }
-
-    function English() {
-      yengi = courses.filter(v=>{
-        return v.course == "Английский язык"
-       })
- 
-       setItems(yengi)
-    }
-   
-
+    )
+  }
 
   return (
     <div>
       <div className="middle">
 
-      <div className="father_filter" id="#123">
-        <button className="course-filter-button" onClick={()=>Webrazrabotka()}>Технологии</button>     
-        <button className="course-filter-button">Маркетинг</button>
-        <button className="course-filter-button">Дизайн</button> 
-        <button className="course-filter-button">Математика</button>
-        <button className="course-filter-button" onClick={()=>English()}>Иностранный язык</button>
-        <button className="course-filter-button">Высшая наука</button>
-        <button className="course-filter-button">Финансы</button>
-      </div>
+        <div className="father_filter" id="#123">
+          <button className="course-filter-button" onClick={Wed}>Веб-Разработка</button>
+          <button className="course-filter-button" onClick={Inostrani}>Иностранный язык</button>
+          <button className="course-filter-button" onClick={GrafichiskiyDizayn}>Дизайн</button>
+        </div>
 
       </div>
       <div className="courses_container">
         <div className="courses">
-          {loadingStatus === "loading" ? (<Preloader />) : loadingStatus === "error" ? (<div className="another">Error sending request</div>) : courses.length === 0 ? (<div className="another">No course</div>) : (displayCourses())}
+          {
+            (Data.length > 0) ?
+              <>
+                {
+                  Data.map((arr, i) => {
+                    return (
+                      <div>
+                        <div className="course">
+                          <div className="course_container">
+                            <div className="course_box b1">
+                              <img className="course_name" src={arr.img} alt="" />
+                            </div>
+                            <div className="course_box b2">
+                              <div className="academy_container">
+                                <div className="academy_name">{arr.course}</div>
+                              </div>
+                            </div>
+                            <div className="course_box b4">
+                              <div className="course_time">
+                                 {arr.academy}  <br /><br />
+                                 <img src={img} alt="" />{arr.grade}
+                              </div>
+                            </div>
+                            <div className="course_box b3">
+                              <div className="course_price">{arr.price} сум</div>
+                            </div>
+                            <div className="course_box b3">
+                              <div className="course_time">
+                                {arr.time} <br />
+                              <img style={{width:"20px" , height:"20px"}} src={imgtime} alt="" />
+                              </div>
+                            </div>
+                            <div className="course_box buttons">
+                              <button className="course_button cb1" type="button">
+                                На сайт курса
+                              </button>
+                              <button className="course_button cb2" onClick={()=>{More(arr)}} type="button">
+                                Подробнее
+                              </button>
+                              <button  className="course_button cb3" type="button">
+                                Добавить к сравнению
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </>
+              :
+              <><h1>loading....</h1></>
+          }
         </div>
       </div>
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={courses.length}
-        paginate={paginate}
-
-      />
-      {/* <button className="btn btn-primary" onClick={() => prevPage}>
-        Prev Page
-      </button>
-      <button className="btn btn-primary ms-2" onClick={() => nextPage}>
-        Next Page
-      </button> */}
     </div>
   );
 };

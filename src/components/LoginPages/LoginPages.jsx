@@ -10,8 +10,8 @@ import Modal from "../Modal/index";
 import emailjs from "@emailjs/browser"
 
 export default function LoginPages() {
-	const [isSaveShow, setIsSaveShow] = useState(false);
-	const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSaveShow, setIsSaveShow] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [Email, setEmail] = useState(null);
   const [Name, setName] = useState(null);
   const [Surname, setSurname] = useState(null);
@@ -34,8 +34,8 @@ export default function LoginPages() {
   //   }
   // }
   const removeTaskOpeningModal = () => {
-		setIsModalOpen(true);
-	};
+    setIsModalOpen(true);
+  };
 
   
   const form = useRef();
@@ -53,7 +53,7 @@ export default function LoginPages() {
 
   function Yuborish() {
     setLoading(true);
-    
+
     if (
       Password != null &&
       Password2 != null &&
@@ -61,14 +61,13 @@ export default function LoginPages() {
       Email != null
     ) {
       if (Password == Password2) {
-        axios
-          .post("https://63905b3f65ff41831110b776.mockapi.io/api/users", {
-            email: Email,
-            password: Password,
-            surname: Surname,
-            name: Name,
-          })
-          .then((res) => {
+        axios.post("https://63905b3f65ff41831110b776.mockapi.io/api/users", {
+          email: Email,
+          password: Password,
+          surname: Surname,
+          name: Name,
+        })
+          .then(res => {
             console.log(res.data);
           });
         toast.success("Вы зарегестрировались!");
@@ -133,20 +132,20 @@ export default function LoginPages() {
             type="text"
             placeholder="Введите фамилию..."
           />
-              <input
-                type="text"
-                onInput={(val) => {
-                  setEmail(val.target.value);
-                }}
-                className="input"
-                style={{
-                  borderBottom: `3px solid ${Border2}`,
-                  border: `3px solid ${Border2}`,
-                }}
-                placeholder="Введите электронную почту..."
-              />
-              <button className="ButtomYuborish2" onClick={removeTaskOpeningModal}>
-                Отправить код на почту
+          <input
+            type="text"
+            onInput={(val) => {
+              setEmail(val.target.value);
+            }}
+            className="input"
+            style={{
+              borderBottom: `3px solid ${Border2}`,
+              border: `3px solid ${Border2}`,
+            }}
+            placeholder="Введите электронную почту..."
+          />
+          <button className="ButtomYuborish2" onClick={removeTaskOpeningModal}>
+            Отправить код на почту
           </button>
           <input
             onInput={(val) => {
@@ -181,9 +180,9 @@ export default function LoginPages() {
         </div>
       </div>
       <Modal
-				isVisible={isModalOpen}
-				setIsVisible={setIsModalOpen}
-			/>
+        isVisible={isModalOpen}
+        setIsVisible={setIsModalOpen}
+      />
     </div>
   );
 }
