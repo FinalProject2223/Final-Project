@@ -49,7 +49,7 @@ const Course = ( { data, course, academy, grade, price, time, duration, type, ce
           </div>
         </div>
         <div className="course_box b3">
-          <div className="course_price">{price}</div>
+          <div className="course_price">{price} сум</div>
         </div>
         <div className="course_box b4">
           <div className="course_time">
