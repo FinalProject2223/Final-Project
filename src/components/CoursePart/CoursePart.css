@@ -56,7 +56,15 @@
   -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   transition: 0.2s;
+<<<<<<< HEAD
  
+=======
+  /* &:active {
+    background: #47B5FF;
+    color: white;
+    
+  } */
+>>>>>>> d94b24ce82eed8254b98f316a33560c099989bc0
 }
 
 .course {
