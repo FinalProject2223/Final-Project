@@ -1,8 +1,11 @@
 import React from 'react'
+import SchoolPart from '../components/SchoolPart/SchoolPart'
 
 const Schools = () => {
   return (
-    <div>Schools</div>
+    <div>
+      <SchoolPart/>
+    </div>
   )
 }
 

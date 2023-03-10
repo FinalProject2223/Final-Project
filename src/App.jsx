@@ -7,7 +7,7 @@ import Course from "./screens/Course";
 import Reviews from "./screens/Reviews";
 import Feedback from "./screens/Feedback";
 import Schools from "./screens/Schools";
-import Cabinet from "./screens/Cabinet";
+import Cabinet from "./screens/Cabinet/Cabinet";
 import Compare from "./screens/ComparePage/index";
 import LoginPages from "./components/LoginPages/LoginPages";
 import SingIn from "./components/SingIn/SingIn";

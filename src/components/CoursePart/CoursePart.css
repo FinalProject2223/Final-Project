@@ -29,6 +29,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  
 }
 
 .father_filter {
@@ -55,11 +56,7 @@
   -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   transition: 0.2s;
-  &:active {
-    background: #47B5FF;
-    color: white;
-    
-  }
+ 
 }
 
 .course {
