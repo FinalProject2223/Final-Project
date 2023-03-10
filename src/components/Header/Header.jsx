@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import loupeImg from "../Img/loupe.png";
 import { Link, NavLink } from "react-router-dom";
-import "./Header.css";
+import "./Header.scss";
 import { useSelector } from "react-redux";
 
 const Header = () => {
+ 
+  const [auth, setAuth] = useState(false);
+
   const comparingList = useSelector(
-		(state) => state.comparing.comparingCoursesList
-	);
+    (state) => state.comparing.comparingCoursesList
+  );
+
+  let localstorage = JSON.parse(localStorage.getItem("User"))
+  // const userAuth = useSelector((state) => state.auth.authList);
+
+  
 
   const keryka = () => {
-    console.log(":)");
-  }
+  };
 
   return (
     <div className="header">
@@ -29,7 +36,7 @@ const Header = () => {
           <Link className="p_text" to="/course">
             Курсы
           </Link>
-          <Link className="p_text" to="/previews">
+          <Link className="p_text" to="/reviews">
             Обзоры
           </Link>
           <Link className="p_text" to="/schools">
@@ -41,20 +48,35 @@ const Header = () => {
         </div>
       </div>
       <div className="button_container">
-        <Link to="/compare"> 
-        <img className="trade_img" src={tradeImg} alt="" />
-        { comparingList.length === 0 ? (keryka()) : (<span>{comparingList.length}</span>)}
+        <Link to="/compare">
+          <img className="trade_img" src={tradeImg} alt="" />
+          {comparingList.length === 0 ? (
+            keryka()
+          ) : (
+            <span>{comparingList.length}</span>
+          )}
         </Link>
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
-          <input
-            className="input_search"
-            type="text"
-            placeholder="Искать курсы"
-          />
+        <input
+          className="input_search"
+          type="text"
+          placeholder="Искать курсы"
+        />
       </div>
-      <Link to={"/SingInPages"}><h1 className="mt-1">SingIn</h1></Link>
+            
+      <div className="cnt_ath_btn">
+        {localstorage ?
+        (<Link to={"/cabinet"}>
+        <button className="auth_btn">Профиль</button>
+      </Link>) 
+         :
+        (
+        <Link to={"/SingInPages"}>
+          <button className="auth_btn">Вход</button>
+        </Link>)}
+      </div>
     </div>
   );
 };
