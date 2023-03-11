@@ -1,0 +1,148 @@
+.Cabinet{
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar{
+    width: 20vw;
+    height: 100vh;
+    background-color: #47B5FF;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Data{
+    width: 18vw;
+    height: 70px;
+    margin-left: 31px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Data h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+.Cabinet__LeftNavbar__Data:hover{
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.Cabinet__LeftNavbar__Courses{
+    width: 18vw;
+    height: 70px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Courses h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+.Cabinet__LeftNavbar__Courses:hover{
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.Cabinet__LeftNavbar__Additions{
+    width: 18vw;
+    height: 70px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Additions h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+.Cabinet__LeftNavbar__Additions:hover{
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.Cabinet__LeftNavbar__Settings{
+    width: 18vw;
+    height: 70px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Settings h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+.Cabinet__LeftNavbar__Settings:hover{
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.Cabinet__LeftNavbar__line{
+    width: 20vw;
+    height: 4px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+
+
+.Cabinet__RightContent{
+    width: 80vw;
+    height: 100vh;
+}
+.Cabinet__RightContent__Data_Dani{
+    width: 98%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.leave_room {
+    margin-top: 20px;
+    color: red; 
+    cursor: "pointer";
+}
+.Cabinet__RightContent__Data_Dani__Img{
+    width: 350px;
+    height: 100px;
+    margin-left: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.Cabinet__RightContent__Data_Dani__Input{
+    width: 70%;
+    height: 82%;
+    padding: 40px 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
