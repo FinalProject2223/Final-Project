@@ -4,7 +4,7 @@ import Home from "./screens/Home";
 import All from './components/All';
 import {  Route, Routes } from "react-router-dom";
 import Course from "./screens/Course";
-import Reviews from "./screens/Reviews";
+import Reviews from "./screens/Reviews/Reviews";
 import Feedback from "./screens/Feedback";
 import Schools from "./screens/Schools";
 import Cabinet from "./screens/Cabinet/Cabinet";
