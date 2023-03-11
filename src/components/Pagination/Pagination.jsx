@@ -1,14 +1,7 @@
 import React from "react";
 import "./Pagination.css";
 
-const Pagination = ({
-  itemsPerPage,
-  totalItems,
-  paginate,
-  nextPage,
-  prevPage,
-  idishka,
-}) => {
+const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
@@ -24,7 +17,7 @@ const Pagination = ({
               className="page-link"
               onClick={() => {
                 paginate(number);
-                window.scrollTo(0, 0)
+                window.scrollTo(0, 0);
               }}
             >
               {number}

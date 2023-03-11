@@ -1,8 +1,8 @@
 import { createAction } from "@reduxjs/toolkit";
 import { getCourses } from "../api/getCourses";
-import { postCourses } from "../api/postCourses";
-import { deleteCourses } from "../api/deleteCourses";
-import { patchCourses } from "../api/patchCourses";
+// import { postCourses } from "../api/postCourses";
+// import { deleteCourses } from "../api/deleteCourses";
+// import { patchCourses } from "../api/patchCourses";
 
 export const coursesFetch = () => async (dispatch) => {
 	try {

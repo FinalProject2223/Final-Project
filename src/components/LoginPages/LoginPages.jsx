@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./LoginCss.css";
 import img from "../Img/working.png";
 import { MdCloudUpload } from "react-icons/md";
@@ -6,7 +6,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import LogoImg from "../Img/mb-team_logo.png";
-import Modal from "../Modal/index"
+import Modal from "../Modal/index";
+import emailjs from "@emailjs/browser"
 
 export default function LoginPages() {
   const [isSaveShow, setIsSaveShow] = useState(false);
@@ -35,6 +36,20 @@ export default function LoginPages() {
   const removeTaskOpeningModal = () => {
     setIsModalOpen(true);
   };
+
+  
+  const form = useRef();
+
+  // function sendEmail(e) {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('service_au8azge', 'template_l9x56e6', form.current, 'ci4ZXxmGtKuEiqtQo')
+  //     .then((result) => {
+  //         console.log("message sent");
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // }
 
   function Yuborish() {
     setLoading(true);
@@ -78,6 +93,15 @@ export default function LoginPages() {
 
   return (
     <div className="sign_in_page">
+      {/* <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form> */}
       <div className="SignInLogo">
         <div className="logo_boxzz">
           <div className="dsdsd">
