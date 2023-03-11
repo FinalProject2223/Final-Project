@@ -36,14 +36,14 @@ const Header = () => {
           <Link className="p_text" to="/course">
             Курсы
           </Link>
-          <Link className="p_text" to="/reviews">
-            Обзоры
-          </Link>
           <Link className="p_text" to="/schools">
             Школы
           </Link>
           <Link className="p_text" to="/feedback">
-            Отзывы
+            Акции
+          </Link>
+          <Link className="p_text" to="/reviews">
+            Блог
           </Link>
         </div>
       </div>

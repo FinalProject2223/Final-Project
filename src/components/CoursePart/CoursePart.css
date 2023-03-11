@@ -8,7 +8,7 @@
 }
 .courses {
   gap: 20px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -40,7 +40,7 @@
   gap: 10px;
 }
 .course-filter-button {
-  width: 160px;
+  width: 180px;
   height: 50px;
   border: none;
   background: #fff;
@@ -51,11 +51,26 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
-    
+    /* border: 1px solid black; */
+
   -webkit-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
+<<<<<<< HEAD
   transition: 0.2s;
+=======
+  transition: 0.5s;
+  /* &:active {
+    background: #47B5FF;
+    color: white;
+    
+  } */
+}
+.course-filter-button:hover {
+  background-color: #47B5FF;
+  color: white;
+  border: none;
+>>>>>>> 16ffa388a91118c152fd2fab360343bc0a68b3b2
 }
 
 .course {
@@ -74,6 +89,7 @@
   -webkit-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
+  transition: 0.5s;
 }
 .course_box {
   width: 190px;
@@ -160,38 +176,43 @@
   gap: 8px;
 }
 .course_button {
-  width: 154px;
+  width: 180px;
   height: 36px;
   border-radius: 100px;
   border: none;
-
+  transition: 0.5s;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
+  -webkit-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
+  box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
 }
 .cb1 {
-  background: #47B5FF;
-  color: white;
+  background: white;
+  color: black;
 }
 .cb2 {
   background: white;
-  border: 1px solid #2b2b2b;
-  border-radius: 100px;
 }
 .cb3 {
   font-style: normal;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 24px;
   /* identical to box height, or 240% */
 
   text-align: center;
   background-color: #fff;
-  color: #8c8c8c;
+  color: #000000;
 }
-
+.course_button:hover {
+  background-color: #47B5FF;
+  color: white;
+  border: none;
+}
 .course_name{
   width: 200px;
   height: 150px;
@@ -210,6 +231,6 @@
   text-align: center;
   font-size: 20px;
 }
-.course_price2{
+/* .course_price2{
   
-}
+} */
