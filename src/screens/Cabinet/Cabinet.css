@@ -38,6 +38,30 @@
     border-bottom-left-radius: 50px;
 }
 
+.Cabinet__LeftNavbar__Data__Active{
+    width: 18vw;
+    height: 70px;
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 31px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.Cabinet__LeftNavbar__Data__Active h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+
 .Cabinet__LeftNavbar__Courses{
     width: 18vw;
     height: 70px;
@@ -61,6 +85,30 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+
+
+.Cabinet__LeftNavbar__Courses__Active{
+    width: 18vw;
+    height: 70px;
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Courses__Active h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
 .Cabinet__LeftNavbar__Additions{
     width: 18vw;
     height: 70px;
@@ -84,6 +132,29 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+
+.Cabinet__LeftNavbar__Additions__Active{
+    width: 18vw;
+    height: 70px;
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.Cabinet__LeftNavbar__Additions__Active h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
 .Cabinet__LeftNavbar__Settings{
     width: 18vw;
     height: 70px;
@@ -107,6 +178,31 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+
+.Cabinet__LeftNavbar__Settings__Active{
+    width: 18vw;
+    height: 70px;
+    background-color: white;
+    color: #47B5FF;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 31px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.Cabinet__LeftNavbar__Settings__Active h3{
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+
 .Cabinet__LeftNavbar__line{
     width: 20vw;
     height: 4px;

@@ -3,7 +3,7 @@ import "./CoursePart.css";
 import img from "../Img/star.png";
 import imgtime from "../Img/time.png";
 import { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { coursesFetch } from "../../redux/actions";
 import Pagination from "../Pagination/Pagination";
 import axios from "axios";
@@ -13,6 +13,7 @@ import Preloader from "../Preloader/index";
 const CoursePart = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage] = useState(4);
+  const dispatch = useDispatch()
 
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
@@ -64,6 +65,10 @@ const CoursePart = () => {
     navigate(`/More/${params.id}`, {
       state: params,
     });
+  }
+
+  function Izobraniya(params) {
+    dispatch({type:"IZOBRANIYA" , peolad:{...params}})
   }
 
   return (
@@ -135,7 +140,7 @@ const CoursePart = () => {
                           >
                             Подробнее
                           </button>
-                          <button className="course_button cb3" type="button">
+                          <button onClick={()=>{Izobraniya(arr)}} className="course_button cb3" type="button">
                             Добавить в избранные
                           </button>
                         </div>

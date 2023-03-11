@@ -1,11 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
-// import { ToastContainer } from "react-toastify";
-import Card from "./Card";
+import { useSelector , useDispatch} from "react-redux";
 import "./comparepage.css";
-
-import { useEffect } from "react";
-import axios from "axios";
 import { useState } from "react";
 import img from "../../components/Img/star.png";
 import imgtime from "../../components/Img/time.png";
@@ -16,6 +11,10 @@ import Preloader from "../../components/Preloader/index";
 const ComparePage = () => {
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
+  const selector = useSelector(state => state.favorites)
+  console.log(selector , "=>kevoti");
+
+  const dispatch = useDispatch()
 
   const navigate = useNavigate();
 
@@ -25,16 +24,17 @@ const ComparePage = () => {
     });
   }
   
-
+  function Delete(params) {
+    dispatch({type:"Delete" , peoalad:params})
+  }
       
     return (
       <div className="root" >
-        <button >Fav</button>
       <div className="courses_container">
         <div className="courses">
-          {Data.length > 0 ? (
+          {selector.length > 0 ? (
             <>
-              {Data.map((arr, i) => {
+              {selector.map((arr, i) => {
                 return (
                   <div>
                     <div className="course">
@@ -81,8 +81,8 @@ const ComparePage = () => {
                           >
                             Подробнее
                           </button>
-                          <button className="course_button cb3" type="button">
-                            Добавить в избранные
+                          <button onClick={()=>{Delete(arr)}} className="course_button cb3" type="button">
+                            Удалить в избранные
                           </button>
                         </div>
                       </div>
@@ -95,7 +95,6 @@ const ComparePage = () => {
             <>
               <h>
                 <Preloader />
-                Error
               </h>
             </>
           )}
