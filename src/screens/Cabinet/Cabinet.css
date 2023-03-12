@@ -227,6 +227,7 @@
     cursor: "pointer";
 }
 .Cabinet__RightContent__Data_Dani__Img{
+    width: 250px;
     width: auto;
     height: 100px;
     margin-left: 100px;
