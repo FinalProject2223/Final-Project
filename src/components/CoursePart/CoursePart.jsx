@@ -14,8 +14,8 @@ import { toast } from "react-toastify";
 const CoursePart = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage] = useState(4);
-  const dispatch = useDispatch()
-  const selector = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state.auth);
 
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
@@ -26,6 +26,29 @@ const CoursePart = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const navigate = useNavigate();
 
+  const [allPages, setAllPages] = useState("Active");
+  const [webPages, setWebPages] = useState("none");
+  const [designPages, setDesignPages] = useState("none");
+  const [foreignPages, setForeignPages] = useState("none");
+  const [hardPages, setHardPages] = useState("none");
+
+  function allOn() {
+    
+  }
+
+  function webOn() {
+    
+  }
+
+  function designOn() {
+    
+  }
+
+  function foreignOn() {
+    
+  }
+  
+  
   useEffect(() => {
     axios
       .get("https://api.npoint.io/f62bee9ee0f889870333")
@@ -45,6 +68,21 @@ const CoursePart = () => {
     });
     console.log(categoriya);
     setData(categoriya);
+    setAllPages("none")
+    setWebPages("Active")
+    setDesignPages("none")
+    setForeignPages("none")
+    setHardPages("none")
+  }
+  function All() {
+    let categoriya = Data2;
+    console.log(categoriya);
+    setData(categoriya);
+    setAllPages("Active")
+    setWebPages("none")
+    setDesignPages("none")
+    setForeignPages("none")
+    setHardPages("none")
   }
 
   function Inostrani() {
@@ -53,6 +91,23 @@ const CoursePart = () => {
     });
     console.log(categoriya);
     setData(categoriya);
+    setAllPages("none")
+    setWebPages("none")
+    setDesignPages("none")
+    setForeignPages("Active")
+    setHardPages("none")
+  }
+  function HardPhy() {
+    let categoriya = Data2.filter((res) => {
+      return res.categoriya === "higher-science";
+    });
+    console.log(categoriya);
+    setData(categoriya);
+    setAllPages("none")
+    setWebPages("none")
+    setDesignPages("none")
+    setForeignPages("none")
+    setHardPages("Active")
   }
 
   function GrafichiskiyDizayn() {
@@ -61,6 +116,11 @@ const CoursePart = () => {
     });
     console.log(categoriya);
     setData(categoriya);
+    setAllPages("none")
+    setWebPages("none")
+    setDesignPages("Active")
+    setForeignPages("none")
+    setHardPages("none")
   }
 
   function More(params) {
@@ -69,53 +129,62 @@ const CoursePart = () => {
     });
   }
 
-  let Izo = []
+  let Izo = [];
 
   function Izobraniya(params) {
     // dispatch({type:"IZOBRANIYA" , peolad:{...params}})
 
-
     console.log(Izo, "=>Yashqardan");
 
-    axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
+    axios
+      .get(
+        `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`
+      )
       .then((res) => {
         console.log(res.data);
-        let Data = res.data.DataFavorites.find((item) => { return item.id == params.id })
-        Izo = res.data.DataFavorites
+        let Data = res.data.DataFavorites.find((item) => {
+          return item.id == params.id;
+        });
+        Izo = res.data.DataFavorites;
         if (Data) {
           toast.error("Уже добавлен в избранные");
-        }
-        else {
-          Izo.push(params)
-          axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
-            DataFavorites: Izo
-          })
+        } else {
+          Izo.push(params);
+          axios
+            .put(
+              `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`,
+              {
+                DataFavorites: Izo,
+              }
+            )
             .then((res) => {
               console.log(res.data);
             })
             .catch((error) => {
               console.log(error);
-            })
+            });
           toast.success("Добавлено в избранные");
         }
-      })
-
+      });
   }
 
   return (
     <div>
       <div className="middle">
         <div className="father_filter" id="#123">
-          <button className="course-filter-button" onClick={Web}>
+          <button className={allPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={All} >
+            Все
+          </button>
+          <button className={webPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Web}>
             Програмированния
           </button>
-          <button className="course-filter-button" onClick={GrafichiskiyDizayn}>
+          <button className={designPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={GrafichiskiyDizayn}>
             Дизайн
           </button>
-          <button className="course-filter-button" onClick={GrafichiskiyDizayn}>
+          <button className={hardPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={HardPhy}>
             Высшая наука
           </button>
-          <button className="course-filter-button" onClick={Inostrani}>
+          <button className={foreignPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Inostrani}>
             Иностранный язык
           </button>
         </div>
@@ -127,7 +196,7 @@ const CoursePart = () => {
               {Data.map((arr, i) => {
                 return (
                   <div key={arr.id}>
-                    <div className="course" >
+                    <div className="course">
                       <div className="course_container">
                         <div className="course_box b1">
                           <img className="course_name" src={arr.img} alt="" />
@@ -171,7 +240,13 @@ const CoursePart = () => {
                           >
                             Подробнее
                           </button>
-                          <button onClick={() => { Izobraniya(arr) }} className="course_button cb3" type="button">
+                          <button
+                            onClick={() => {
+                              Izobraniya(arr);
+                            }}
+                            className="course_button cb3"
+                            type="button"
+                          >
                             Добавить в избранные
                           </button>
                         </div>
