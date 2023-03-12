@@ -35,7 +35,11 @@ const ComparePage = () => {
   }
   
   function Delete(params) {
-    dispatch({type:"Delete" , peoalad:params})
+    axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
+    .then((res)=>{
+      let Data =  res.data.DataFavorites
+    })
+  
   }
       
     return (

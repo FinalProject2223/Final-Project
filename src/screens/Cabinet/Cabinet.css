@@ -227,12 +227,15 @@
     cursor: "pointer";
 }
 .Cabinet__RightContent__Data_Dani__Img{
+<<<<<<< HEAD
     width: 250px;
+=======
+    width: auto;
+>>>>>>> f2b0b7c474e9bd3d56331431e49b7784ab7de723
     height: 100px;
     margin-left: 100px;
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
 }
 .Cabinet__RightContent__Data_Dani__Input{
     width: 70%;
