@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
+import tradeImg2 from "../Img/trade2.png";
 import loupeImg from "../Img/loupe.png";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
@@ -21,6 +22,8 @@ const Header = () => {
   const [schoolsPages, setSchoolsPages] = useState("none");
   const [discountPages, setDiscountPages] = useState("none");
   const [blogPages, setBlogPages] = useState("none");
+  const [izoPages, setIzoPages] = useState("none");
+  const [profPages, setProfPages] = useState("none");
 
   function homeOn() {
     setHomePages("Active")
@@ -28,6 +31,20 @@ const Header = () => {
     setSchoolsPages("none")
     setDiscountPages("none")
     setBlogPages("none")
+    setIzoPages("none")
+    setProfPages("none")
+  }
+
+  
+  function noneOn2() {
+    setHomePages("none")
+    setCoursePages("none")
+    setSchoolsPages("none")
+    setDiscountPages("none")
+    setBlogPages("none")
+    
+    setIzoPages("Active")
+    setProfPages("none")
   }
 
   function noneOn() {
@@ -36,6 +53,9 @@ const Header = () => {
     setSchoolsPages("none")
     setDiscountPages("none")
     setBlogPages("none")
+    
+    setIzoPages("none")
+    setProfPages("none")
   }
 
   function courseOn() {
@@ -44,6 +64,9 @@ const Header = () => {
     setSchoolsPages("none")
     setDiscountPages("none")
     setBlogPages("none")
+    
+    setIzoPages("none")
+    setProfPages("none")
   }
 
   function schoolsOn() {
@@ -52,6 +75,9 @@ const Header = () => {
     setSchoolsPages("Active")
     setDiscountPages("none")
     setBlogPages("none")
+    
+    setIzoPages("none")
+    setProfPages("none")
   }
 
   function discountOn() {
@@ -60,6 +86,9 @@ const Header = () => {
     setSchoolsPages("none")
     setDiscountPages("Active")
     setBlogPages("none")
+    
+    setIzoPages("none")
+    setProfPages("none")
   }
   function blogOn() {
     setHomePages("none")
@@ -67,6 +96,9 @@ const Header = () => {
     setSchoolsPages("none")
     setDiscountPages("none")
     setBlogPages("Active")
+    
+    setIzoPages("none")
+    setProfPages("none")
   }
 
   const keryka = () => {};
@@ -98,7 +130,7 @@ const Header = () => {
       </div>
       <div className="button_container">
         <Link  to="/compare">
-          <img onClick={noneOn} className="trade_img" src={tradeImg} alt="" />
+          <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
           {comparingList.length === 0 ? (
             keryka()
           ) : (
