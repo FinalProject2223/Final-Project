@@ -1,23 +1,32 @@
-import React from "react";
-import { useSelector } from "react-redux";
-// import { ToastContainer } from "react-toastify";
-import Card from "./Card";
+import React, { useEffect } from "react";
+import { useSelector , useDispatch} from "react-redux";
 import "./comparepage.css";
-
-import { useEffect } from "react";
-import axios from "axios";
 import { useState } from "react";
 import img from "../../components/Img/star.png";
 import imgtime from "../../components/Img/time.png";
 import { useNavigate } from "react-router-dom";
 
 import Preloader from "../../components/Preloader/index";
+import axios from "axios";
 
 const ComparePage = () => {
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
+  const selector = useSelector(state => state.auth)
+  console.log(selector , "=>kevoti");
+
+  const dispatch = useDispatch()
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
+    .then((res)=>{
+      console.log(res.data.DataFavorites);
+      setData(res.data.DataFavorites)
+    })
+  }, [])
+  
 
   function More(params) {
     navigate(`/More/${params.id}`, {
@@ -25,11 +34,12 @@ const ComparePage = () => {
     });
   }
   
-
+  function Delete(params) {
+    dispatch({type:"Delete" , peoalad:params})
+  }
       
     return (
       <div className="root" >
-        <button >Fav</button>
       <div className="courses_container">
         <div className="courses">
           {Data.length > 0 ? (
@@ -81,8 +91,8 @@ const ComparePage = () => {
                           >
                             Подробнее
                           </button>
-                          <button className="course_button cb3" type="button">
-                            Добавить в избранные
+                          <button onClick={()=>{Delete(arr)}} className="course_button cb3" type="button">
+                            Удалить в избранные
                           </button>
                         </div>
                       </div>
@@ -95,7 +105,6 @@ const ComparePage = () => {
             <>
               <h>
                 <Preloader />
-                Error
               </h>
             </>
           )}

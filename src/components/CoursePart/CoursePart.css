@@ -56,6 +56,8 @@
   -webkit-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.61);
+
+
   transition: 0.5s;
   /* &:active {
     background: #47B5FF;

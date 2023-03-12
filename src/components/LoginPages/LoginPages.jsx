@@ -11,7 +11,6 @@ import emailjs from "@emailjs/browser"
 
 export default function LoginPages() {
   const [isSaveShow, setIsSaveShow] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [Email, setEmail] = useState(null);
   const [Name, setName] = useState(null);
   const [Surname, setSurname] = useState(null);
@@ -20,6 +19,8 @@ export default function LoginPages() {
   const [Border, setBorder] = useState();
   const [Border2, setBorder2] = useState();
   const [Loading, setLoading] = useState(false);
+  const [Shahar , setShahar] = useState()
+
 
   const naviget = useNavigate();
 
@@ -33,11 +34,7 @@ export default function LoginPages() {
   //     console.log(image);
   //   }
   // }
-  const removeTaskOpeningModal = () => {
-    setIsModalOpen(true);
-  };
 
-  
   const form = useRef();
 
   // function sendEmail(e) {
@@ -50,6 +47,11 @@ export default function LoginPages() {
   //         console.log(error.text);
   //     });
   // }
+
+  function handleChange(params) {
+    setShahar(params)
+    console.log(Shahar);
+  }
 
   function Yuborish() {
     setLoading(true);
@@ -66,6 +68,7 @@ export default function LoginPages() {
           password: Password,
           surname: Surname,
           name: Name,
+          city:Shahar
         })
           .then(res => {
             console.log(res.data);
@@ -144,9 +147,22 @@ export default function LoginPages() {
             }}
             placeholder="Введите электронную почту..."
           />
-          <button className="ButtomYuborish2" onClick={removeTaskOpeningModal}>
-            Отправить код на почту
-          </button>
+          <select onChange={event => handleChange(event.target.value)} className="input" style={{borderBottom: `3px solid ${Border2}`,border: `3px solid ${Border2}`,}} name="" id="">
+            <option disabled selected value="">Введите город</option>
+            <option  value="Ташкент">Ташкент</option>
+            <option  value="Самарканд">Самарканд</option>
+            <option  value="Бухара">Бухара</option>
+            <option  value="Наманган">Наманган</option>
+            <option  value="Фергана">Фергана</option>
+            <option  value="Андижан">Андижан</option>
+            <option  value="Гулистан">Гулистан</option>
+            <option  value="Джизак">Джизак</option>
+            <option  value="Термез">Термез</option>
+            <option  value="Навои">Навои</option>
+            <option  value="Ургенч">Ургенч</option>
+            <option  value="Нукус">Нукус</option>
+            <option  value="Другой город">Другой город</option>
+          </select>
           <input
             onInput={(val) => {
               setPassword(val.target.value);
@@ -179,10 +195,7 @@ export default function LoginPages() {
           </button>
         </div>
       </div>
-      <Modal
-        isVisible={isModalOpen}
-        setIsVisible={setIsModalOpen}
-      />
+
     </div>
   );
 }

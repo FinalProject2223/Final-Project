@@ -7,20 +7,69 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 
 const Header = () => {
- 
   const [auth, setAuth] = useState(false);
 
   const comparingList = useSelector(
     (state) => state.comparing.comparingCoursesList
   );
 
-  let localstorage = JSON.parse(localStorage.getItem("User"))
+  let localstorage = JSON.parse(localStorage.getItem("User"));
   // const userAuth = useSelector((state) => state.auth.authList);
 
-  
+  const [homePages, setHomePages] = useState("Active");
+  const [coursePages, setCoursePages] = useState("none");
+  const [schoolsPages, setSchoolsPages] = useState("none");
+  const [discountPages, setDiscountPages] = useState("none");
+  const [blogPages, setBlogPages] = useState("none");
 
-  const keryka = () => {
-  };
+  function homeOn() {
+    setHomePages("Active")
+    setCoursePages("none")
+    setSchoolsPages("none")
+    setDiscountPages("none")
+    setBlogPages("none")
+  }
+
+  function noneOn() {
+    setHomePages("none")
+    setCoursePages("none")
+    setSchoolsPages("none")
+    setDiscountPages("none")
+    setBlogPages("none")
+  }
+
+  function courseOn() {
+    setHomePages("none")
+    setCoursePages("Active")
+    setSchoolsPages("none")
+    setDiscountPages("none")
+    setBlogPages("none")
+  }
+
+  function schoolsOn() {
+    setHomePages("none")
+    setCoursePages("none")
+    setSchoolsPages("Active")
+    setDiscountPages("none")
+    setBlogPages("none")
+  }
+
+  function discountOn() {
+    setHomePages("none")
+    setCoursePages("none")
+    setSchoolsPages("none")
+    setDiscountPages("Active")
+    setBlogPages("none")
+  }
+  function blogOn() {
+    setHomePages("none")
+    setCoursePages("none")
+    setSchoolsPages("none")
+    setDiscountPages("none")
+    setBlogPages("Active")
+  }
+
+  const keryka = () => {};
 
   return (
     <div className="header">
@@ -30,26 +79,26 @@ const Header = () => {
           <b className="logo_name"> MBM-TEAM</b>
         </div>
         <div className="li_box">
-          <Link className="p_text" to="/">
+          <Link onClick={homeOn} className={homePages == "Active" ? "p_text_active" : "p_text"} to="/">
             Главная
           </Link>
-          <Link className="p_text" to="/course">
+          <Link onClick={courseOn} className={coursePages == "Active" ? "p_text_active" : "p_text"} to="/course">
             Курсы
           </Link>
-          <Link className="p_text" to="/schools">
+          <Link onClick={schoolsOn} className={schoolsPages == "Active" ? "p_text_active" : "p_text"} to="/schools">
             Школы
           </Link>
-          <Link className="p_text" to="/feedback">
+          <Link onClick={discountOn} className={discountPages == "Active" ? "p_text_active" : "p_text"} to="/feedback">
             Акции
           </Link>
-          <Link className="p_text" to="/reviews">
+          <Link onClick={blogOn} className={blogPages == "Active" ? "p_text_active" : "p_text"} to="/reviews">
             Блог
           </Link>
         </div>
       </div>
       <div className="button_container">
-        <Link to="/compare">
-          <img className="trade_img" src={tradeImg} alt="" />
+        <Link  to="/compare">
+          <img onClick={noneOn} className="trade_img" src={tradeImg} alt="" />
           {comparingList.length === 0 ? (
             keryka()
           ) : (
@@ -65,17 +114,17 @@ const Header = () => {
           placeholder="Искать курсы"
         />
       </div>
-            
+
       <div className="cnt_ath_btn">
-        {localstorage ?
-        (<Link to={"/cabinet"}>
-        <button className="auth_btn">Профиль</button>
-      </Link>) 
-         :
-        (
-        <Link to={"/SingInPages"}>
-          <button className="auth_btn">Вход</button>
-        </Link>)}
+        {localstorage ? (
+          <Link onClick={noneOn} to={"/cabinet"}>
+            <button className="auth_btn">Профиль</button>
+          </Link>
+        ) : (
+          <Link onClick={noneOn} to={"/SingInPages"}>
+            <button className="auth_btn">Вход</button>
+          </Link>
+        )}
       </div>
     </div>
   );
