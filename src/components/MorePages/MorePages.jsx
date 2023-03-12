@@ -22,14 +22,14 @@ export default function MorePages() {
                 <div>
                   <img
                     className="img_card"
-                    src="https://lh3.googleusercontent.com/p/AF1QipN7-tCwR_JIVPlIMZJ_4AGD28Cl45jCLIjaNFlK=s1360-w1360-h1020"
+                    src={data.dataImg.img1}
                     alt=""
                   />
                 </div>
                 <div className="left_right">
                   <img
                     className="img_card"
-                    src="https://avatars.mds.yandex.net/get-altay/4581272/2a00000179a7c1a405bac87d053e96b876cb/XXL_height"
+                    src={data.dataImg.img2}
                     alt=""
                   />
                 </div>
@@ -37,7 +37,7 @@ export default function MorePages() {
                   {" "}
                   <img
                     className="img_card"
-                    src="https://www.afisha.uz/uploads/media/2021/05/0966024.jpeg"
+                    src={data.dataImg.img3}
                     alt=""
                   />
                 </div>
