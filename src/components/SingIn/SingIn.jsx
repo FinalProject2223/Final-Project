@@ -29,6 +29,7 @@ export default function SingIn() {
         if (result) {
           toast.success("Поздравляю вы вошли в профиль");
           naviget("/");
+          document.location.reload()
           setLoading(false);
     // dispatch(authTrueFetching());
      localStorage.setItem("User" , JSON.stringify(result))

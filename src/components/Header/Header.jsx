@@ -74,7 +74,7 @@ const Header = () => {
          :
         (
         <Link to={"/SingInPages"}>
-          <button className="auth_btn">Вход</button>
+          <button  className="auth_btn">Вход</button>
         </Link>)}
       </div>
     </div>

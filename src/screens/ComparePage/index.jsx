@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector , useDispatch} from "react-redux";
 import "./comparepage.css";
 import { useState } from "react";
@@ -7,16 +7,26 @@ import imgtime from "../../components/Img/time.png";
 import { useNavigate } from "react-router-dom";
 
 import Preloader from "../../components/Preloader/index";
+import axios from "axios";
 
 const ComparePage = () => {
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
-  const selector = useSelector(state => state.favorites)
+  const selector = useSelector(state => state.auth)
   console.log(selector , "=>kevoti");
 
   const dispatch = useDispatch()
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
+    .then((res)=>{
+      console.log(res.data.DataFavorites);
+      setData(res.data.DataFavorites)
+    })
+  }, [])
+  
 
   function More(params) {
     navigate(`/More/${params.id}`, {
@@ -32,9 +42,9 @@ const ComparePage = () => {
       <div className="root" >
       <div className="courses_container">
         <div className="courses">
-          {selector.length > 0 ? (
+          {Data.length > 0 ? (
             <>
-              {selector.map((arr, i) => {
+              {Data.map((arr, i) => {
                 return (
                   <div>
                     <div className="course">

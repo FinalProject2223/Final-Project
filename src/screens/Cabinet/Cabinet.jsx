@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './Cabinet.css'
 import { HiOutlineHome, HiOutlineAcademicCap } from 'react-icons/hi'
-import { BiAddToQueue } from 'react-icons/bi'
+import { BiAddToQueue, BiEdit } from 'react-icons/bi'
 import { AiOutlineSetting, AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { TextField } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+
+
 
 export default function Cabinet() {
 
@@ -14,14 +19,20 @@ export default function Cabinet() {
   const [Password2, setPassword2] = useState("inline")
   const [Password3, setPassword3] = useState("password")
 
+  const selector = useSelector(state => state.auth)
+  const navigate = useNavigate()
+
 
   const [DataPages, setDataPages] = useState("inline")
   const [CoursesPages, setCoursesPages] = useState("none")
   const [AdditionsPages, setAdditionsPages] = useState("none")
   const [SettingsPages, setSettingsPages] = useState("none")
 
-  const [Imya, setImya] = useState(null)
-
+  const [Name, setName] = useState(null)
+  const [SurName, setSurName] = useState(null)
+  const [Email, setEmail] = useState(null)
+  const [City, setCity] = useState()
+  const [PassowrdPut, setPassowrdPut] = useState(null)
 
   function Open() {
     setPassword2("none")
@@ -65,8 +76,84 @@ export default function Cabinet() {
     setSettingsPages("inline")
   }
 
-  const selector = useSelector(state => state.auth)
-  console.log(selector);
+
+
+
+  function handleChange(params) {
+    setCity(params)
+  }
+
+  function Yuborish() {
+    if (Name != null ) {
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
+        name: Name,
+
+      })
+      .then((res)=>{
+        console.log(res.data);
+     localStorage.setItem("User" , JSON.stringify(res.data))
+      })
+      toast.success("Изменение успешно завершено");
+    }
+
+    if (SurName != null ) {
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
+        surname: SurName,
+
+      })
+      .then((res)=>{
+        console.log(res.data);
+     localStorage.setItem("User" , JSON.stringify(res.data))
+      })
+      toast.success("Изменение успешно завершено");
+    }
+
+    if (Email != null ) {
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
+        email: Email,
+
+      })
+      .then((res)=>{
+        console.log(res.data);
+     localStorage.setItem("User" , JSON.stringify(res.data))
+      })
+      toast.success("Изменение успешно завершено");
+    }
+
+    if (PassowrdPut != null ) {
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
+        password: PassowrdPut,
+
+      })
+      .then((res)=>{
+        console.log(res.data);
+     localStorage.setItem("User" , JSON.stringify(res.data))
+      })
+      toast.success("Изменение успешно завершено");
+    }
+    if (City != null ) {
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`, {
+        city: City,
+
+      })
+      .then((res)=>{
+        console.log(res.data);
+     localStorage.setItem("User" , JSON.stringify(res.data))
+      })
+      toast.success("Изменение успешно завершено");
+    }
+    // else {
+    //   toast.error("Вы ничего не изменили");
+    //   console.log("yoq ishlamadi");
+    // }
+  }
+
+  function Exit() {
+    localStorage.removeItem("User")
+    navigate("/")
+    document.location.reload()
+  }
+
   return (
     <div className='Cabinet'>
       <div className='Cabinet__LeftNavbar'>
@@ -88,7 +175,7 @@ export default function Cabinet() {
           <h3>Настройки</h3>
         </div>
         <div className='Cabinet__LeftNavbar__line'></div>
-        <h3 className="leave_room">Выход</h3>
+        <h3 onClick={Exit} style={{cursor:"pointer"}} className="leave_room">Выход</h3>
       </div>
 
       <div className='Cabinet__RightContent'>
@@ -175,20 +262,64 @@ export default function Cabinet() {
         <div style={{ display: `${SettingsPages}` }}>
           <TextField
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "40px", marginTop: "40px" }}
+            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
             label="Имя"
             defaultValue={selector.name}
-            onInput={(val) => { setImya(val.target.value) }}
+            onInput={(val) => { setName(val.target.value) }}
             variant="standard"
           />
+          <BiEdit style={{ position: "absolute", top: "140", left: "930px", fontSize: "25px" }} />
           <br />
           <TextField
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "40px", marginTop: "40px" }}
-            label="Имя"
-            defaultValue={selector.name}
+            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
+            label="Фамилия"
+            defaultValue={selector.surname}
+            onInput={(val) => { setSurName(val.target.value) }}
             variant="standard"
           />
+          <BiEdit style={{ position: "absolute", top: "240", left: "930px", fontSize: "25px" }} />
+          <br />
+          <TextField
+            id="standard-read-only-input"
+            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
+            label="Почта"
+            defaultValue={selector.email}
+            onInput={(val) => { setEmail(val.target.value) }}
+            variant="standard"
+          />
+          <BiEdit style={{ position: "absolute", top: "340", left: "930px", fontSize: "25px" }} />
+          <br />
+          <select onChange={event => handleChange(event.target.value)} name="" id="" style={{ width: "400px", marginLeft: "250px", marginTop: "50px", border: "none", height: "50px", borderBottom: "1px solid black", outline: "none" }}>
+            <option disabled selected value={selector.city}>{selector.city}</option>
+            <option value='Ташкент'>Ташкент</option>
+            <option value="Самарканд">Самарканд</option>
+            <option value="Бухара">Бухара</option>
+            <option value="Наманган">Наманган</option>
+            <option value="Фергана">Фергана</option>
+            <option value="Андижан">Андижан</option>
+            <option value="Гулистан">Гулистан</option>
+            <option value="Джизак">Джизак</option>
+            <option value="Термез">Термез</option>
+            <option value="Навои">Навои</option>
+            <option value="Ургенч">Ургенч</option>
+            <option value="Нукус">Нукус</option>
+            <option value="Другой город">Другой город</option>
+          </select>
+          <br />
+          <TextField
+            id="standard-read-only-input"
+            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
+            label="Пароль"
+            defaultValue={selector.password}
+            onInput={(val) => { setPassowrdPut(val.target.value) }}
+            variant="standard"
+            type={Password3}
+          />
+          <BiEdit style={{ position: "absolute", top: "538", left: "930px", fontSize: "25px" }} />
+          <div style={{ position: "absolute", top: "530px", left: "900px", fontSize: "23px", display: `${Password2}` }}><AiOutlineEyeInvisible onClick={Open} /></div>
+          <div style={{ position: "absolute", top: "530px", left: "900px", fontSize: "23px", display: `${Password}` }}><AiOutlineEye onClick={Closed} /></div><br />
+          <button style={{ marginTop: "30px", marginLeft: "230px" }} onClick={Yuborish} className='InputDiv_ButtomYuborish'>Сохранить</button>
         </div>
       </div>
     </div>
