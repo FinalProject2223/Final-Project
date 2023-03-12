@@ -22,7 +22,6 @@ const ComparePage = () => {
   useEffect(() => {
     axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
     .then((res)=>{
-      console.log(res.data.DataFavorites);
       setData(res.data.DataFavorites)
     })
   }, [])
@@ -38,7 +37,10 @@ const ComparePage = () => {
     axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
     .then((res)=>{
       let Data =  res.data.DataFavorites
+      Data.splice(params , 1)
+      console.log(Data , '=>Data');
     })
+
   
   }
       
