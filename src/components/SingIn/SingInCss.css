@@ -69,14 +69,17 @@ line-height: 61px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 7.5%;
+    width: 400px;
 }
 .InputDiv_ButtomYuborish {
-  width: 450px;
+  width: 400px;
   height: 60px;
   background: #06283d;
   border-radius: 16px;
   color: rgba(71, 181, 255, 1);
   font-size: 30px;
+  font-family: 'Montserrat';
+  font-weight: 400;
 }
 .InputDiv_H3 {
     margin-top: 20px;

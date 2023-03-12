@@ -1,9 +1,11 @@
 .Cabinet{
-    width: 99vw;
+    width: 98vw;
     height: 100vh;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    
+    font-family: 'Montserrat';
 }
 .Cabinet__LeftNavbar{
     width: 20vw;
@@ -26,9 +28,12 @@
     padding-left: 40px;
     box-sizing: border-box;
 }
-.Cabinet__LeftNavbar__Data h3{
-    margin-left: 15px;
-    margin-top: 3px;
+.Text_NavBar {
+    margin-left: 5px;
+    margin-top: 15px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .Cabinet__LeftNavbar__Data:hover{
@@ -207,7 +212,7 @@
     width: 20vw;
     height: 4px;
     background-color: white;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 
@@ -222,15 +227,40 @@
     box-sizing: border-box;
 }
 .leave_room {
-    margin-top: 20px;
+    margin-top: 30px;
     color: red; 
+    font-weight: 700;
+    font-family: 'Montserrat';
     cursor: "pointer";
+}
+.input_change_syn {
+    width: 250px;
+    height: 40px;
+    background: #06283d;
+    border-radius: 16px;
+    color: rgba(71, 181, 255, 1);
+    font-size: 25px;
+    margin-top: 50px;
+}
+.div_Btn_Syn {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+}
+.text_profile{
+    font-weight: 700;
+    margin-top: 30px;
+    font-size:30px;
 }
 .Cabinet__RightContent__Data_Dani__Img{
     width: 250px;
+    font-family: 'Montserrat';
     width: auto;
     height: 100px;
     margin-left: 100px;
+    display: flex;
+    gap: 2%;
+    font-weight: 900;
     margin-top: 30px;
     display: flex;
 }
