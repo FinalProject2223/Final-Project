@@ -15,7 +15,12 @@
     object-fit: cover;
     margin-top: 50px;
 }
-
+.div2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .categoria{
 margin:10px 0;
     font-size: 17px;

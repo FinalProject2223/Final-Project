@@ -6,9 +6,9 @@ import Reating from "./Reating";
 
 export default function MorePages() {
   const [data, setData] = useState(useLocation().state);
-
+  
   console.log(data);
-
+  
   return (
     <div>
       <div className="container">
@@ -69,6 +69,9 @@ export default function MorePages() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="div2">
+      <Reating/>  
       </div>
     </div>
   );
