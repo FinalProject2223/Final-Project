@@ -28,7 +28,7 @@ const Schools = () => {
                 <div className='flex_shcool'>
                   <img src={v.img} className="img_school" alt="" />
                   <p className='school_name'>{v.name}</p>
-                  <div className='flex_star ms-2'><img src={star} alt="" className='star' /> <p>{v.over}</p></div>
+                  <div className='flex_star ms-2'><img src={star} alt="" className='star' /> <p className='over'>{v.over}</p></div>
                 </div>
               </div>
             })
