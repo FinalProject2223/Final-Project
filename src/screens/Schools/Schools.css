@@ -1,0 +1,31 @@
+.over{
+    width: 10px;
+    height: 10px;
+    margin-left: 2px;
+}
+
+.course_name{
+    object-fit: cover;
+}
+.course_container2 {
+    /* display: flex;
+    justify-content: center;
+    margin-bottom: 30px;  
+    font-family: "Montserrat", sans-serif;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #ffffff;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 11px -4px rgb(0 0 0 / 61%);  */
+}
+
+
+.center{
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}

@@ -6,7 +6,7 @@ import {  Route, Routes } from "react-router-dom";
 import Course from "./screens/Course";
 import Reviews from "./screens/Reviews";
 import Feedback from "./screens/Feedback";
-import Schools from "./screens/Schools";
+import Schools from "./screens/Schools/Schools";
 import Cabinet from "./screens/Cabinet";
 import Compare from "./screens/ComparePage/index";
 import LoginPages from "./components/LoginPages/LoginPages";

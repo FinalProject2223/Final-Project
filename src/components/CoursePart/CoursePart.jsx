@@ -68,6 +68,7 @@ const CoursePart = () => {
           <button className="course-filter-button" onClick={Wed}>Веб-Разработка</button>
           <button className="course-filter-button" onClick={Inostrani}>Иностранный язык</button>
           <button className="course-filter-button" onClick={GrafichiskiyDizayn}>Дизайн</button>
+          
         </div>
 
       </div>
