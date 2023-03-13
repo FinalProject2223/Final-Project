@@ -31,22 +31,8 @@ const CoursePart = () => {
   const [designPages, setDesignPages] = useState("none");
   const [foreignPages, setForeignPages] = useState("none");
   const [hardPages, setHardPages] = useState("none");
+  const [otherPages, setOtherPages] = useState("none");
 
-  function allOn() {
-    
-  }
-
-  function webOn() {
-    
-  }
-
-  function designOn() {
-    
-  }
-
-  function foreignOn() {
-    
-  }
   
   
   useEffect(() => {
@@ -73,6 +59,7 @@ const CoursePart = () => {
     setDesignPages("none")
     setForeignPages("none")
     setHardPages("none")
+    setOtherPages("none")
   }
   function All() {
     let categoriya = Data2;
@@ -83,6 +70,7 @@ const CoursePart = () => {
     setDesignPages("none")
     setForeignPages("none")
     setHardPages("none")
+    setOtherPages("none")
   }
 
   function Inostrani() {
@@ -96,6 +84,7 @@ const CoursePart = () => {
     setDesignPages("none")
     setForeignPages("Active")
     setHardPages("none")
+    setOtherPages("none")
   }
   function HardPhy() {
     let categoriya = Data2.filter((res) => {
@@ -108,6 +97,20 @@ const CoursePart = () => {
     setDesignPages("none")
     setForeignPages("none")
     setHardPages("Active")
+    setOtherPages("none")
+  }
+  function otherCrs() {
+    let categoriya = Data2.filter((res) => {
+      return res.categoriya === "other";
+    });
+    console.log(categoriya);
+    setData(categoriya);
+    setAllPages("none")
+    setWebPages("none")
+    setDesignPages("none")
+    setForeignPages("none")
+    setHardPages("none")
+    setOtherPages("Active")
   }
 
   function GrafichiskiyDizayn() {
@@ -121,6 +124,7 @@ const CoursePart = () => {
     setDesignPages("Active")
     setForeignPages("none")
     setHardPages("none")
+    setOtherPages("none")
   }
 
   function More(params) {
@@ -176,7 +180,7 @@ const CoursePart = () => {
             Все
           </button>
           <button className={webPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Web}>
-            Програмированния
+            Программирования
           </button>
           <button className={designPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={GrafichiskiyDizayn}>
             Дизайн
@@ -186,6 +190,9 @@ const CoursePart = () => {
           </button>
           <button className={foreignPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Inostrani}>
             Иностранный язык
+          </button>
+          <button className={otherPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={otherCrs}>
+            Другое
           </button>
         </div>
       </div>
