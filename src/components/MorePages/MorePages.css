@@ -1,29 +1,44 @@
+.row {
+    margin-top: 50px;
+    margin-bottom:  50px;
+}
 .academy{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 55px;
+    margin: 20px 25px;
 }
 
 .img_more{
-    width: 85%;
-    height: 450px;
-    border-radius: 25px;
+    width: 115%;
+    height: 400px;
+    border-radius: 10px;
     object-fit: cover;
     margin-top: 50px;
+    margin-left: -90px;
 }
-
-
+.div2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .categoria{
-    font-size: 18px;
-    
+margin:10px 25px;
+    font-size: 17px;
+    font-weight: 600;    
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.title {
+    margin: 10px 0;
+}
 
 .img_card{
-    width: 200px;
+    width: 170px;
+    height: 120px;
     border-radius: 10px;
-
+    margin: 2px;
+    cursor: pointer;
 }
 
 
@@ -32,7 +47,9 @@
    padding: 20px;
     
 }
-
+.col-6 {
+    margin-left: 50px;
+}
 
 .center{
     display: flex;

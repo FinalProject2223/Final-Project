@@ -1,44 +1,43 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import axios from "axios";
-import img from   "../img/star.png"
-import imgtime from   "../img/time.png"
+import star from "../img/star.png"
 import "./Schools.css"
+ 
+
 const Schools = () => {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get("https://api.npoint.io/d999e9f37444a6164162")
+    .then((v)=>{
+      
+      setData(v.data)
+    })
+    .catch((err)=>{
 
-    const [Data, setData] = useState([])
+    })
+  }, [])
   
-
-    useEffect(() => {
-        axios.get("https://api.npoint.io/d999e9f37444a6164162")
-          .then((res) => {
-            console.log(res.data);
-            setData(res.data)
-            
-    
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-      }, []);
   return (
-    <div>
-        <div >
-        
-          {
-            (Data.length > 0) ?
-              <>
-                {
-                  Data.map((arr, i) => {
-                    return (
-                      <div></div>
-                    )
-                  })
-                }
-              </>
-              :
-              <><h1>loading....</h1></>
-          }
-        
+    <div className='conta'>
+      <div className='row'>
+        {
+          (data.length > 0) ?(
+            
+            data.map((v,i)=>{
+              return <div className='col-5 m-2'>
+                <div className='flex_shcool'>
+                  <img src={v.img} className="img_school" alt="" />
+                  <p className='school_name'>{v.name}</p>
+                  <div className='flex_star ms-2'><img src={star} alt="" className='star' /> <p>{v.over}</p></div>
+                </div>
+              </div>
+            })
+          )
+          :(
+            <h1>Error</h1>
+          )
+          
+        }
       </div>
     </div>
   )

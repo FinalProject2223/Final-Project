@@ -1,31 +1,49 @@
-.over{
-    width: 10px;
-    height: 10px;
-    margin-left: 2px;
-}
-
-.course_name{
+.img_school{
+    width: 200px;
+    height: 150px;
     object-fit: cover;
-}
-.course_container2 {
-    /* display: flex;
-    justify-content: center;
-    margin-bottom: 30px;  
-    font-family: "Montserrat", sans-serif;
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-    background: #ffffff;
-    border: 2px solid #f0f0f0;
-    border-radius: 5px;
-    box-shadow: 0px 4px 11px -4px rgb(0 0 0 / 61%);  */
+    box-shadow: 0px 0px 5px gray;
+    border-radius: 14px;
 }
 
 
-.center{
-    width: 100vh;
+.flex_shcool{
     display: flex;
-    justify-content: center;
-    background-color: aqua;
+    align-items: center;
+    /* box-shadow: 0px 0px 5px gray;
+    border-radius: 14px; */
+    padding: 10px;
+    width: 100%;
+}
+
+.conta{
+    padding:  30px 300px;
+}
+
+
+.school_name{
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+}
+
+.flex_star{
+    display: flex;
+
+}
+
+
+.star{
+    width: 17px;
+    height: 17px;
+}
+
+
+.over{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -2px;
+    margin-left: 5px;
 }

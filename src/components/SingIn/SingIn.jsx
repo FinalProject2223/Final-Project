@@ -29,6 +29,7 @@ export default function SingIn() {
         if (result) {
           toast.success("Поздравляю вы вошли в профиль");
           naviget("/");
+          document.location.reload()
           setLoading(false);
     // dispatch(authTrueFetching());
      localStorage.setItem("User" , JSON.stringify(result))
@@ -68,9 +69,9 @@ export default function SingIn() {
             type="password"
             placeholder="Введите пароль..."
           />
-          <h3 className="InputDiv_H3">
+          {/* <h3 className="InputDiv_H3">
             <Link to={"/LoginPages"}>Забыли свой пароль?</Link>
-          </h3>
+          </h3> */}
           <div className="signInButton">
             <button onClick={Tekshirish} className="InputDiv_ButtomYuborish">
               {Loading ? "Загрузка..." : "Войти в профиль"}
