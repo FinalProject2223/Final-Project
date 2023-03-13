@@ -12,6 +12,8 @@ import axios from "axios";
 const ComparePage = () => {
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
+  
+  const [Loading, setLoading] = useState(false);
   const selector = useSelector(state => state.auth)
   console.log(selector , "=>kevoti");
 
@@ -33,11 +35,20 @@ const ComparePage = () => {
     });
   }
   
-  function Delete(params) {
+  function Delete(index) {
+    setLoading(true)
     axios.get(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
     .then((res)=>{
-      let Data =  res.data.DataFavorites
-      Data.splice(params , 1)
+      let Datas =  res.data.DataFavorites
+      Datas.splice(index , 1)
+      axios.put(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}` ,{
+      DataFavorites:Datas
+      })
+      .then((res)=>{
+        console.log(res.data);
+        setLoading(true)
+        window.location.reload()
+      })
       console.log(Data , '=>Data');
     })
 
@@ -97,8 +108,8 @@ const ComparePage = () => {
                           >
                             Подробнее
                           </button>
-                          <button onClick={()=>{Delete(arr)}} className="course_button cb3" type="button">
-                            Удалить в избранные
+                          <button onClick={()=>{Delete(i)}} className="course_button cb3" type="button">
+                          {Loading ? "Loading..." : "Удалить из избранных"}
                           </button>
                         </div>
                       </div>
@@ -110,7 +121,7 @@ const ComparePage = () => {
           ) : (
             <>
               <h>
-                <Preloader />
+                Здесь нету курсов
               </h>
             </>
           )}

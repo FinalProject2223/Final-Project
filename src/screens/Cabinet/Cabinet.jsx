@@ -13,6 +13,7 @@ import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import {BsPlusCircle} from 'react-icons/bs'
 
 export default function Cabinet() {
   const [OZgaruvchi, setOZgaruvchi] = useState("Cabinet__LeftNavbar__Settings");
@@ -318,7 +319,18 @@ export default function Cabinet() {
 
         <div style={{ display: `${CoursesPages}` }}>salom</div>
 
-        <div style={{ display: `${AdditionsPages}` }}>Bosit</div>
+        <div style={{ display: `${AdditionsPages}` }}>
+          <h1 style={{marginLeft:"60px"}}>Добавить курсы:</h1>
+              <div className="Course_Add">
+                  <BsPlusCircle  style={{fontSize:"130px" , cursor:"pointer"}}/>
+              </div>
+              <div className="Course_Add">
+                  <BsPlusCircle  style={{fontSize:"130px" , cursor:"pointer"}}/>
+              </div>
+              <div className="Course_Add">
+                  <BsPlusCircle  style={{fontSize:"130px" , cursor:"pointer"}}/>
+              </div>
+        </div>
 
         <div classnmae="settings_pages"style={{ display: `${SettingsPages}` }}>
           <TextField
