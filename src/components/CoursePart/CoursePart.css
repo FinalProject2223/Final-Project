@@ -94,7 +94,7 @@
 
 .course {
   box-sizing: border-box;
-  width: 1200px;
+  width: 80%;
 }
 .course_container {
   font-family: "Montserrat", sans-serif;
@@ -253,3 +253,8 @@
 /* .course_price2{
   
 } */
+@media only screen and (max-width: 1300px) {
+  .course {
+    width: 50%;
+  }
+}
