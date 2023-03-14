@@ -248,19 +248,31 @@
 }
 
 .input_change_syn {
-    width: 250px;
+    width: 200px;
     height: 40px;
     background: #06283d;
     border-radius: 16px;
     color: rgba(71, 181, 255, 1);
     font-size: 25px;
     margin-top: 50px;
+    margin-right: 10px;
+}
+.input_change_syn_red{
+    width: 200px;
+    height: 40px;
+    background: #f70202;
+    border-radius: 16px;
+    color: rgb(251, 251, 252);
+    font-size: 20px;
+    margin-top: 50px;
+    border: none;
 }
 
 .div_Btn_Syn {
     display: flex;
     width: 75%;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .text_profile {

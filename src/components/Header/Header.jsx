@@ -3,15 +3,17 @@ import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import tradeImg2 from "../Img/trade2.png";
 import loupeImg from "../Img/loupe.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import Mui from "./Mui"
 
 
 const Header = () => {
   const [auth, setAuth] = useState(false);
+  const naviget = useNavigate()
 
   const comparingList = useSelector(
     (state) => state.comparing.comparingCoursesList
@@ -40,14 +42,21 @@ const Header = () => {
 
   
   function noneOn2() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
-    
-    setIzoPages("Active")
-    setProfPages("none")
+    if(localstorage != null){
+      setHomePages("none")
+      setCoursePages("none")
+      setSchoolsPages("none")
+      setDiscountPages("none")
+      setBlogPages("none")
+      
+      setIzoPages("Active")
+      setProfPages("none")
+      naviget("/compare")
+    }
+    else{
+      toast.error("Сперва зарегистрируйтесь! 🕵️‍♀️")
+    }
+
   }
 
   function noneOn() {
@@ -134,9 +143,16 @@ const Header = () => {
 }
       </div>
       <div className="button_container">
-        <Link  to="/compare">
           <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
+<<<<<<< HEAD
+          {comparingList.length === 0 ? (
+            keryka()
+          ) : (
+            <span>{comparingList.length}</span>
+          )}
+=======
         </Link>
+>>>>>>> 91752a97bf2fa0498c2c9197c9659c15fa352f6e
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
