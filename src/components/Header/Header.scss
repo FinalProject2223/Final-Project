@@ -89,28 +89,6 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
 }
-span {
-  position: absolute;
-  
-  top: 20%;
-  right: 19%;
-  
-  z-index: 1;
-  width: 20px;
-  height: 20px;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  border-radius: 50%;
-  
-  font-family: 'Montserrat', sans-serif;
-  color: #ffff;
-  background-color: #47B5FF;
-  font-size: 14px;
-  font-weight: 700;
-}
 .login_ex {
   display: flex;
   justify-content: center;

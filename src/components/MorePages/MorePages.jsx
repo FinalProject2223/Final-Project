@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./MorePages.css";
 import imgStar from "../Img/star.png"
+import Reting from './Reting/Reting'
 
 
 export default function MorePages() {
@@ -76,8 +77,8 @@ export default function MorePages() {
             </div>
           </div>
           <div className="col-5">
-            <h1 className="academy mt-5">{data.academy}</h1>
-            <p className="categoria">Оценка:  <img src={imgStar} alt="" /> {data.grade}</p>
+            <h1 className="academy mt-5">{data.academy} </h1>
+            <p className="categoria"> <Reting /></p>
             <p className="categoria">Курс: {data.course}</p>
             <p className="categoria">Цена: {data.price}</p>
             <p className="categoria">Время: {data.time}</p>
