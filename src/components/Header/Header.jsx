@@ -7,6 +7,9 @@ import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 import { useSelector } from "react-redux";
 
+import Mui from "./Mui"
+
+
 const Header = () => {
   const [auth, setAuth] = useState(false);
 
@@ -110,6 +113,7 @@ const Header = () => {
           <img className="logo_png" src={logoImg} alt="" />
           <b className="logo_name"> MBM-TEAM</b>
         </div>
+        {
         <div className="li_box">
           <Link onClick={homeOn} className={homePages == "Active" ? "p_text_active" : "p_text"} to="/">
             Главная
@@ -127,15 +131,11 @@ const Header = () => {
             Блог
           </Link>
         </div>
+}
       </div>
       <div className="button_container">
         <Link  to="/compare">
           <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
-          {comparingList.length === 0 ? (
-            keryka()
-          ) : (
-            <span>{comparingList.length}</span>
-          )}
         </Link>
       </div>
       <div className="search_container">
@@ -158,6 +158,7 @@ const Header = () => {
           </Link>
         )}
       </div>
+      {/* <Mui/> */}
     </div>
   );
 };

@@ -19,7 +19,7 @@ export const Karusel = () => {
 
   return (
     <div className="slider">
-    <div className="slider_text">Школы</div>
+    <div className="slider_text">С нами сотрудничают</div>
     <div className="ortaga_opchiq">
       <Slider {...settings} className="slider_width">
         <div className="slider_img_box">

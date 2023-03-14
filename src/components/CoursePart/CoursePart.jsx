@@ -180,13 +180,13 @@ const CoursePart = () => {
             Все
           </button>
           <button className={webPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Web}>
-            Программирования
+            Программирование
           </button>
           <button className={designPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={GrafichiskiyDizayn}>
             Дизайн
           </button>
           <button className={hardPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={HardPhy}>
-            Высшая наука
+            Точная наука
           </button>
           <button className={foreignPages == "Active" ? "course-filter-button_active" : "course-filter-button"} onClick={Inostrani}>
             Иностранный язык
