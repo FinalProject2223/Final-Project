@@ -144,15 +144,11 @@ const Header = () => {
       </div>
       <div className="button_container">
           <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
-<<<<<<< HEAD
           {comparingList.length === 0 ? (
             keryka()
           ) : (
             <span>{comparingList.length}</span>
           )}
-=======
-        </Link>
->>>>>>> 91752a97bf2fa0498c2c9197c9659c15fa352f6e
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
