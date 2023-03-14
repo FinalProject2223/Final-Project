@@ -9,9 +9,9 @@ import logoImg from "../Img/mb-team_logo.png";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="Footer__Parent">
       <div className="Footer">
-        <div className="container">
+        <div className="container2">
           <div className="roww">
             <div className="col-3">
               <div className="father_categorias">
@@ -38,7 +38,7 @@ const Footer = () => {
                     <RiTelegramLine className="inst"/>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-5">
               <div className="title_text_us">
                 <p>Написать нам</p>
                 <div className="form_div">

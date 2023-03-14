@@ -50,3 +50,30 @@ p {
     font-family: 'Montserrat', sans-serif;
     text-align: center;   
 }
+@media only screen and (max-width: 770px) {
+    .secondPart {
+        padding: 10px;
+    }
+    .zaga_1 {
+        font-size: 18px;
+    }
+    .obyekt_2 {
+        font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .secondPart {
+        padding: 2px;
+    }
+    .zaga_1 {
+        font-size: 13px;
+    }
+    .obyekt_2 {
+        font-size: 10px;
+    }
+    .About_Text_1 {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+  }

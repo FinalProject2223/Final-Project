@@ -8,6 +8,9 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
+import Mui from "./Mui"
+
+
 const Header = () => {
   const [auth, setAuth] = useState(false);
   const naviget = useNavigate()
@@ -119,6 +122,7 @@ const Header = () => {
           <img className="logo_png" src={logoImg} alt="" />
           <b className="logo_name"> MBM-TEAM</b>
         </div>
+        {
         <div className="li_box">
           <Link onClick={homeOn} className={homePages == "Active" ? "p_text_active" : "p_text"} to="/">
             Главная
@@ -136,14 +140,19 @@ const Header = () => {
             Блог
           </Link>
         </div>
+}
       </div>
       <div className="button_container">
           <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
+<<<<<<< HEAD
           {comparingList.length === 0 ? (
             keryka()
           ) : (
             <span>{comparingList.length}</span>
           )}
+=======
+        </Link>
+>>>>>>> 91752a97bf2fa0498c2c9197c9659c15fa352f6e
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
@@ -165,6 +174,7 @@ const Header = () => {
           </Link>
         )}
       </div>
+      {/* <Mui/> */}
     </div>
   );
 };

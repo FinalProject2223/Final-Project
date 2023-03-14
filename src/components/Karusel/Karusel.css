@@ -36,9 +36,32 @@ box-shadow: 13px 13px 15px -3px rgba(157, 158, 159, 0.61);
     margin-bottom: 1%;
 } 
 .slider_img_box {
-    width:100px;
+    width: 100px;
     background-color: #ffffff;
     padding: 0px 20px;
     height: 250px;
     outline: none;
 }
+@media only screen and (max-width: 1030px) {
+    .slider_img_box {
+        height: 200px;
+    }
+    .img_karusel {
+        height: 120px;
+    }
+    .slick-slider {
+        height: 150px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .slider_img_box {
+        height: 120px;
+    }
+    .img_karusel {
+        height: 80px;
+        width: 70px;
+    }
+    .slick-slider {
+        height: 120px;
+    }
+  }
