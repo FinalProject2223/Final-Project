@@ -51,7 +51,7 @@ line-height: 61px;
     width: 150px;
 }
 .SingIn_Input {
-  width: 650px;
+  width: 100%;
   height: 60px;
   background: #47b5ff;
   margin-top: 30px;
@@ -72,12 +72,12 @@ line-height: 61px;
     width: 400px;
 }
 .InputDiv_ButtomYuborish {
-  width: 400px;
+  width: 80%;
   height: 60px;
   background: #06283d;
   border-radius: 16px;
   color: rgba(71, 181, 255, 1);
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Montserrat';
   font-weight: 400;
 }

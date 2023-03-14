@@ -29,6 +29,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   
 }
 
@@ -36,6 +37,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 50px;
   gap: 10px;
 }
@@ -94,13 +96,14 @@
 
 .course {
   box-sizing: border-box;
-  width: 80%;
+  width: 100%;
 }
 .course_container {
   font-family: "Montserrat", sans-serif;
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 20px;
   background: #ffffff;
   border: 2px solid #f0f0f0;
@@ -111,7 +114,7 @@
   transition: 0.5s;
 }
 .course_box {
-  width: 190px;
+  width: 200px;
 }
 .b1 {
   display: flex;
@@ -253,8 +256,28 @@
 /* .course_price2{
   
 } */
-@media only screen and (max-width: 1300px) {
-  .course {
-    width: 50%;
+@media only screen and (max-width: 1060px) {
+  .course_name {
+    width: 160px;
+  }
+  .course_container {
+    padding: 10px 0px;
+  }
+  .course_button {
+    font-size: 10px;
+  }
+  .academy_name {
+    font-size: 15px;
+  }
+  .course_time {
+    font-size: 15px;
+  }
+  .course_price {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .course_box {
+    margin: 10px;
   }
 }
