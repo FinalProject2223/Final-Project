@@ -234,14 +234,14 @@ export default function Cabinet() {
           className="Cabinet__RightContent__Data_Dani"
         >
           <div className="Cabinet__RightContent__Data_Dani__Img">
-            <FaRegUserCircle style={{ fontSize: "100px" }} />
-            <h1>
+            <FaRegUserCircle className="UserIcon" />
+            <h6>
               {selector.name} <br /> {selector.surname}
-            </h1>
+            </h6>
           </div>
           <div className="Cabinet__RightContent__Data_Dani__Input">
             <TextField
-              sx={{ width: "300px" }}
+            className="InputDanni"
               id="standard-read-only-input"
               label="Имя"
               defaultValue={selector.name}
@@ -251,7 +251,7 @@ export default function Cabinet() {
               variant="standard"
             />
             <TextField
-              sx={{ width: "300px", marginLeft: "30px" }}
+            className="InputDanni2"
               id="standard-read-only-input"
               label="Фамилия"
               defaultValue={selector.surname}
@@ -261,7 +261,7 @@ export default function Cabinet() {
               variant="standard"
             />
             <TextField
-              sx={{ width: "300px", marginTop: "-80px" }}
+            className="InputDanni3"
               id="standard-read-only-input"
               label="Почта"
               defaultValue={selector.email}
@@ -271,7 +271,7 @@ export default function Cabinet() {
               variant="standard"
             />
             <TextField
-              sx={{ width: "300px", marginTop: "-80px", marginLeft: "30px" }}
+            className="InputDanni4"
               id="standard-read-only-input"
               label="Пароль"
               defaultValue={selector.password}
@@ -282,22 +282,16 @@ export default function Cabinet() {
               type={Password3}
             />
             <div
+            className="Password_Open"
               style={{
-                position: "absolute",
-                top: "175px",
-                right: "110px",
-                fontSize: "18px",
                 display: `${Password2}`,
               }}
             >
               <AiOutlineEyeInvisible onClick={Open} />
             </div>
             <div
+            className="Password_Closed"
               style={{
-                position: "absolute",
-                top: "175px",
-                right: "110px",
-                fontSize: "18px",
                 display: `${Password}`,
               }}
             >
@@ -305,7 +299,7 @@ export default function Cabinet() {
             </div>
             <TextField
               id="standard-read-only-input"
-              sx={{ width: "300px", marginTop: "-120px" }}
+              className="InputDanni5"
               label="Город"
               defaultValue={selector.city}
               InputProps={{
@@ -315,7 +309,7 @@ export default function Cabinet() {
             />
             <TextField
               id="standard-read-only-input"
-              sx={{ width: "300px", marginTop: "-120px", marginLeft: "30px" }}
+              className="InputDanni6"
               label="Дата создания"
               defaultValue={selector.createdAt}
               InputProps={{
@@ -345,7 +339,7 @@ export default function Cabinet() {
           <h2 style={{ marginLeft: "50px" }}>Настройки</h2>
           <TextField
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "250px", marginTop: "0px" }}
+            className="Edit_Input1"
             label="Имя"
             defaultValue={selector.name}
             onInput={(val) => {
@@ -354,17 +348,12 @@ export default function Cabinet() {
             variant="standard"
           />
           <BiEdit
-            style={{
-              position: "absolute",
-              top: "140",
-              left: "930px",
-              fontSize: "25px",
-            }}
+            className="Edit_Input1_Icon"
           />
           <br />
           <TextField
+            className="Edit_Input2"
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
             label="Фамилия"
             defaultValue={selector.surname}
             onInput={(val) => {
@@ -373,17 +362,12 @@ export default function Cabinet() {
             variant="standard"
           />
           <BiEdit
-            style={{
-              position: "absolute",
-              top: "240",
-              left: "930px",
-              fontSize: "25px",
-            }}
+            className="Edit_Input2_Icon"
           />
           <br />
           <TextField
+            className="Edit_Input3"
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
             label="Почта"
             defaultValue={selector.email}
             onInput={(val) => {
@@ -392,27 +376,14 @@ export default function Cabinet() {
             variant="standard"
           />
           <BiEdit
-            style={{
-              position: "absolute",
-              top: "340",
-              left: "930px",
-              fontSize: "25px",
-            }}
+            className="Edit_Input3_Icon"
           />
           <br />
           <select
+            className="Edit_Input4"
             onChange={(event) => handleChange(event.target.value)}
             name=""
             id=""
-            style={{
-              width: "400px",
-              marginLeft: "250px",
-              marginTop: "50px",
-              border: "none",
-              height: "50px",
-              borderBottom: "1px solid black",
-              outline: "none",
-            }}
           >
             <option disabled selected value={selector.city}>
               {selector.city}
@@ -433,8 +404,8 @@ export default function Cabinet() {
           </select>
           <br />
           <TextField
+            className="Edit_Input5"
             id="standard-read-only-input"
-            sx={{ width: "400px", marginLeft: "250px", marginTop: "50px" }}
             label="Пароль"
             defaultValue={selector.password}
             onInput={(val) => {
@@ -444,30 +415,19 @@ export default function Cabinet() {
             type={Password3}
           />
           <BiEdit
-            style={{
-              position: "absolute",
-              top: "538",
-              left: "930px",
-              fontSize: "25px",
-            }}
+            className="Edit_Input5_Icon"
           />
           <div
+            className="Edit_Input5_eye_Open"
             style={{
-              position: "absolute",
-              top: "530px",
-              left: "900px",
-              fontSize: "23px",
               display: `${Password2}`,
             }}
           >
             <AiOutlineEyeInvisible onClick={Open} />
           </div>
           <div
+            className="Edit_Input5_eye_Closed"
             style={{
-              position: "absolute",
-              top: "530px",
-              left: "900px",
-              fontSize: "23px",
               display: `${Password}`,
             }}
           >

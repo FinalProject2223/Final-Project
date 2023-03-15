@@ -229,7 +229,7 @@
 
 
 .Cabinet__RightContent {
-    width: 80vw;
+    width: 45vw;
     height: 100vh;
 }
 
@@ -257,7 +257,8 @@
     margin-top: 50px;
     margin-right: 10px;
 }
-.input_change_syn_red{
+
+.input_change_syn_red {
     width: 200px;
     height: 40px;
     background: #f70202;
@@ -270,9 +271,10 @@
 
 .div_Btn_Syn {
     display: flex;
-    width: 75%;
+    width: 600px;
     justify-content: center;
     box-sizing: border-box;
+    margin-left: 155px;
 }
 
 .text_profile {
@@ -321,3 +323,360 @@
     margin-top: 15px;
     margin-left: 60px;
 }
+
+.UserIcon {
+    font-size: 100px;
+}
+
+.InputDanni {
+    width: 300px;
+}
+
+.InputDanni2 {
+    width: 300px;
+    margin-left: 30px !important
+}
+
+.InputDanni3 {
+    width: 300px;
+    margin-top: -40px !important;
+}
+
+.InputDanni4 {
+    width: 300px;
+    margin-top: -40px !important;
+    margin-left: 30px !important;
+}
+
+.InputDanni5 {
+    width: 300px;
+    margin-top: -30px !important;
+}
+
+.InputDanni6 {
+    width: 300px;
+    margin-top: -150px !important;
+    margin-left: 350px !important;
+}
+
+.Password_Open {
+    position: absolute;
+    top: 175px;
+    right: 110px;
+    font-size: 18px;
+}
+
+.Password_Closed {
+    position: absolute;
+    top: 175px;
+    right: 110px;
+    font-size: 18px;
+}
+
+.Edit_Input1 {
+    width: 400px !important;
+    margin-left: 250px !important;
+    margin-top: 0px !important;
+}
+
+.Edit_Input1_Icon {
+    position: absolute;
+    top: 140px;
+    left: 930px;
+    font-size: 25px;
+}
+
+.Edit_Input2 {
+    width: 400px !important;
+    margin-left: 250px !important;
+    margin-top: 50px !important;
+}
+
+.Edit_Input2_Icon {
+    position: absolute;
+    top: 240px;
+    left: 930px;
+    font-size: 25px;
+}
+
+.Edit_Input3 {
+    width: 400px !important;
+    margin-left: 250px !important;
+    margin-top: 50px !important;
+}
+
+.Edit_Input3_Icon {
+    position: absolute;
+    top: 340px;
+    left: 930px;
+    font-size: 25px;
+}
+
+.Edit_Input4 {
+    width: 400px;
+    margin-left: 250px;
+    margin-top: 50px;
+    border: none;
+    height: 50px;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.Edit_Input5 {
+    width: 400px !important;
+    margin-left: 250px !important;
+    margin-top: 50px !important;
+}
+
+.Edit_Input5_Icon {
+    position: absolute;
+    top: 538px;
+    left: 930px;
+    font-size: 25px;
+}
+
+.Edit_Input5_eye_Open {
+    position: absolute;
+    top: 530px;
+    left: 900px;
+    font-size: 23px;
+}
+
+.Edit_Input5_eye_Closed {
+    position: absolute;
+    top: 530px;
+    left: 900px;
+    font-size: 23px;
+}
+
+@media only screen and (max-width: 992px) {
+    .Cabinet__LeftNavbar {
+        width: 150px;
+    }
+
+    .Cabinet__LeftNavbar__Data__Active {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Data {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Courses__Active {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Courses {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Additions__Active {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Additions {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Settings__Active {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__Settings {
+        width: 230px;
+        margin-left: -30px;
+    }
+
+    .Cabinet__LeftNavbar__line {
+        width: 200px;
+    }
+
+    .Text_NavBar {
+        font-size: 15px;
+    }
+
+    .UserIcon {
+        font-size: 38px;
+        margin-left: 15px;
+    }
+
+    .InputDanni {
+        width: 200px;
+        margin-left: -10px !important;
+    }
+
+    .InputDanni2 {
+        width: 200px;
+        margin-left: -10px !important;
+        margin-top: -80px !important;
+    }
+
+    .InputDanni3 {
+        width: 200px;
+        margin-left: -10px !important;
+        margin-top: -100px !important;
+    }
+
+    .InputDanni4 {
+        width: 200px;
+        margin-left: -10px !important;
+        margin-top: -130px !important;
+    }
+
+    .InputDanni5 {
+        width: 200px;
+        margin-left: -10px !important;
+        margin-top: -140px !important;
+    }
+
+    .InputDanni6 {
+        width: 200px;
+        margin-left: -10px !important;
+        margin-top: -160px !important;
+    }
+
+    .Password_Open {
+        position: absolute;
+        top: 255px;
+        right: 17px;
+        font-size: 18px;
+    }
+
+    .Password_Closed {
+        position: absolute;
+        top: 255px;
+        right: 17px;
+        font-size: 18px;
+    }
+
+    .Cabinet__RightContent__Data_Dani__Input {
+        padding: 0;
+        width: 240px;
+        text-align: center;
+        padding: 0px 0px 0px 30px;
+    }
+
+    .Cabinet__RightContent__Data_Dani__Img {
+        width: 150px;
+        margin-left: -1px;
+    }
+
+
+    .Edit_Input1 {
+        width: 220px !important;
+        margin-left: 20px !important;
+        margin-top: 0px !important;
+    }
+
+    .Edit_Input1_Icon {
+        position: absolute;
+        top: 180px;
+        left: 360px;
+        font-size: 25px;
+    }
+
+    .Edit_Input2 {
+        width: 220px !important;
+        margin-left: 20px !important;
+        margin-top: 50px !important;
+    }
+
+    .Edit_Input2_Icon {
+        position: absolute;
+        top: 300px;
+        left: 360px;
+        font-size: 25px;
+    }
+
+    .Edit_Input3 {
+        width: 220px !important;
+        margin-left: 20px !important;
+        margin-top: 50px !important;
+    }
+
+    .Edit_Input3_Icon {
+        position: absolute;
+        top: 423px;
+        left: 360px;
+        font-size: 25px;
+    }
+
+    .Edit_Input4 {
+        width: 220px !important;
+        margin-left: 20px !important;
+        margin-top: 50px;
+        border: none;
+        height: 50px;
+        border-bottom: 1px solid black;
+        outline: none;
+    }
+
+    .Edit_Input5 {
+        width: 220px !important;
+        margin-left: 20px !important;
+        margin-top: 50px !important;
+    }
+
+    .Edit_Input5_Icon {
+        position: absolute;
+        top: 648px;
+        left: 360px;
+        font-size: 25px;
+    }
+
+    .Edit_Input5_eye_Open {
+        position: absolute;
+        top: 640px;
+        left: 330px;
+        font-size: 23px;
+    }
+
+    .Edit_Input5_eye_Closed {
+        position: absolute;
+        top: 570px;
+        left: 340px;
+        font-size: 23px
+    }
+
+
+    .div_Btn_Syn {
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin-left: 30px;
+    }
+    .input_change_syn {
+        width: 600px ;
+        height: 40px;
+        background: #06283d;
+        border-radius: 16px;
+        color: rgba(71, 181, 255, 1);
+        font-size: 25px;
+        margin-top: 50px;
+        margin-right: 10px;
+        margin-left: 15px;
+    }
+
+    .input_change_syn_red {
+        width: 600px ;
+        height: 40px;
+        background: #f70202;
+        border-radius: 16px;
+        color: rgb(251, 251, 252);
+        font-size: 20px;
+        margin-top: 10px;
+        border: none;
+    }
+}
+
+@media only screen and (max-width:992px) {}
