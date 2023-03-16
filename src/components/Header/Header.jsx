@@ -3,21 +3,19 @@ import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import tradeImg2 from "../Img/trade2.png";
 import loupeImg from "../Img/loupe.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { useSelector } from "react-redux";
 import { RxHamburgerMenu  , RxCross1} from 'react-icons/rx'
+import { toast } from "react-toastify";
 
 
 const Header = () => {
   const [auth, setAuth] = useState(false);
+  
 
-  const comparingList = useSelector(
-    (state) => state.comparing.comparingCoursesList
-  );
 
   let localstorage = JSON.parse(localStorage.getItem("User"));
-  // const userAuth = useSelector((state) => state.auth.authList);
 
   const [homePages, setHomePages] = useState("Active");
   const [coursePages, setCoursePages] = useState("none");
@@ -40,14 +38,15 @@ const Header = () => {
 
 
   function noneOn2() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
-
-    setIzoPages("Active")
-    setProfPages("none")
+      setHomePages("none")
+      setCoursePages("none")
+      setSchoolsPages("none")
+      setDiscountPages("none")
+      setBlogPages("none")
+  
+      setIzoPages("Active")
+      setProfPages("none")
+    
   }
 
   function noneOn() {
