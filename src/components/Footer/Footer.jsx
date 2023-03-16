@@ -16,11 +16,11 @@ const Footer = () => {
             <div className="col-3">
               <div className="father_categorias">
                 <p className="glav_p">Категории</p>
-                <p>Программирования</p>
-                <p>Дизайн</p>
-                <p>Высшая наука</p>
-                <p>Иностранный язык</p>
-                <p>Другое</p>
+                <p className="footer_categoria">Программирования</p>
+                <p className="footer_categoria">Дизайн</p>
+                <p className="footer_categoria">Высшая наука</p>
+                <p className="footer_categoria">Иностранный язык</p>
+                <p className="footer_categoria">Другое</p>
               </div>
             </div>
             <div className="col-3">
@@ -33,13 +33,15 @@ const Footer = () => {
               </div>
               <div className="subscribe_us">
                 <p>Наши соц.сети</p>
-                    <AiOutlineInstagram className="inst"/>
+                 <div className="social_icons">
+                 <AiOutlineInstagram className="inst"/>
                     <RiFacebookCircleLine className="inst"/>
                     <RiTelegramLine className="inst"/>
+                  </div>   
               </div>
             </div>
             <div className="col-5">
-              <div className="title_text_us">
+              <div className="title_text_us tts">
                 <p>Написать нам</p>
                 <div className="form_div">
                   <textarea className="input_text1"  id="" cols="30" rows="10" placeholder="Ваше сообщения..."></textarea>

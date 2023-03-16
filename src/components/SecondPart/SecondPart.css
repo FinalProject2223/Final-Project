@@ -70,7 +70,10 @@ p {
         font-size: 13px;
     }
     .obyekt_2 {
-        font-size: 10px;
+        font-size: 9px;
+    }
+    .obyekt_1 {
+        padding: 0px 0px;    
     }
     .About_Text_1 {
         font-size: 15px;

@@ -235,7 +235,7 @@ export default function Cabinet() {
         >
           <div className="Cabinet__RightContent__Data_Dani__Img">
             <FaRegUserCircle className="UserIcon" />
-            <h6>
+            <h6 className="h6_name_and_surname">
               {selector.name} <br /> {selector.surname}
             </h6>
           </div>
@@ -320,7 +320,7 @@ export default function Cabinet() {
           </div>
         </div>
 
-        <div style={{ display: `${CoursesPages}` }}>salom</div>
+        <div style={{ display: `${CoursesPages}` }}>Скоро...</div>
 
         <div style={{ display: `${AdditionsPages}` }}>
           <h1 style={{ marginLeft: "60px" }}>Добавить курсы:</h1>

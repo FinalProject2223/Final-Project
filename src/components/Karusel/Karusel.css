@@ -55,13 +55,17 @@ box-shadow: 13px 13px 15px -3px rgba(157, 158, 159, 0.61);
   }
   @media only screen and (max-width: 600px) {
     .slider_img_box {
-        height: 120px;
+        height: 80px;
     }
     .img_karusel {
-        height: 80px;
-        width: 70px;
+        height: 60px;
+        width: 55px;
+        
+    -webkit-box-shadow: 6px 6px 8px -3px rgba(157, 158, 159, 0.61);
+    -moz-box-shadow: 6px 6px 8px -3px rgba(157, 158, 159, 0.61);
+    box-shadow: 6px 6px 3px -3px rgba(157, 158, 159, 0.61);
     }
     .slick-slider {
-        height: 120px;
+        height: 80px;
     }
   }

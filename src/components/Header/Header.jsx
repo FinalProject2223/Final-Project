@@ -3,11 +3,11 @@ import logoImg from "../Img/mb-team_logo.png";
 import tradeImg from "../Img/trade.png";
 import tradeImg2 from "../Img/trade2.png";
 import loupeImg from "../Img/loupe.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { useSelector } from "react-redux";
-import { RxHamburgerMenu  , RxCross1} from 'react-icons/rx'
-
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [auth, setAuth] = useState(false);
@@ -15,6 +15,8 @@ const Header = () => {
   const comparingList = useSelector(
     (state) => state.comparing.comparingCoursesList
   );
+
+  const naviget = useNavigate();
 
   let localstorage = JSON.parse(localStorage.getItem("User"));
   // const userAuth = useSelector((state) => state.auth.authList);
@@ -26,91 +28,95 @@ const Header = () => {
   const [blogPages, setBlogPages] = useState("none");
   const [izoPages, setIzoPages] = useState("none");
   const [profPages, setProfPages] = useState("none");
-  const [Mobilni , setMobilni] = useState("li_box")
+  const [Mobilni, setMobilni] = useState("li_box");
 
   function homeOn() {
-    setHomePages("Active")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
-    setIzoPages("none")
-    setProfPages("none")
+    setHomePages("Active");
+    setCoursePages("none");
+    setSchoolsPages("none");
+    setDiscountPages("none");
+    setBlogPages("none");
+    setIzoPages("none");
+    setProfPages("none");
   }
 
-
   function noneOn2() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
+    if (localstorage) {
+      setHomePages("none");
+      setCoursePages("none");
+      setSchoolsPages("none");
+      setDiscountPages("none");
+      setBlogPages("none");
 
-    setIzoPages("Active")
-    setProfPages("none")
+      setIzoPages("Active");
+      setProfPages("none");
+      naviget("/compare");
+    } else {
+      toast.error("Вы не зарегестрировались!");
+    }
   }
 
   function noneOn() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
+    setHomePages("none");
+    setCoursePages("none");
+    setSchoolsPages("none");
+    setDiscountPages("none");
+    setBlogPages("none");
 
-    setIzoPages("none")
-    setProfPages("none")
+    setIzoPages("none");
+    setProfPages("none");
   }
 
   function courseOn() {
-    setHomePages("none")
-    setCoursePages("Active")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("none")
+    setHomePages("none");
+    setCoursePages("Active");
+    setSchoolsPages("none");
+    setDiscountPages("none");
+    setBlogPages("none");
 
-    setIzoPages("none")
-    setProfPages("none")
+    setIzoPages("none");
+    setProfPages("none");
   }
 
   function schoolsOn() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("Active")
-    setDiscountPages("none")
-    setBlogPages("none")
+    setHomePages("none");
+    setCoursePages("none");
+    setSchoolsPages("Active");
+    setDiscountPages("none");
+    setBlogPages("none");
 
-    setIzoPages("none")
-    setProfPages("none")
+    setIzoPages("none");
+    setProfPages("none");
   }
 
   function discountOn() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("Active")
-    setBlogPages("none")
+    setHomePages("none");
+    setCoursePages("none");
+    setSchoolsPages("none");
+    setDiscountPages("Active");
+    setBlogPages("none");
 
-    setIzoPages("none")
-    setProfPages("none")
+    setIzoPages("none");
+    setProfPages("none");
   }
   function blogOn() {
-    setHomePages("none")
-    setCoursePages("none")
-    setSchoolsPages("none")
-    setDiscountPages("none")
-    setBlogPages("Active")
+    setHomePages("none");
+    setCoursePages("none");
+    setSchoolsPages("none");
+    setDiscountPages("none");
+    setBlogPages("Active");
 
-    setIzoPages("none")
-    setProfPages("none")
+    setIzoPages("none");
+    setProfPages("none");
   }
 
-  const keryka = () => { };
-  
+  const keryka = () => {};
+
   function Hammburger() {
-      setMobilni("li_box_Oncilick")  
+    setMobilni("li_box_Oncilick");
   }
   function Cross() {
-    setMobilni("li_box")   
+    setMobilni("li_box");
   }
 
   return (
@@ -122,28 +128,53 @@ const Header = () => {
         </div>
         {
           <div className={Mobilni}>
-            <RxCross1 onClick={Cross} className="ModulNoneX"/>
-            <Link onClick={homeOn} className={homePages == "Active" ? "p_text_active" : "p_text"} to="/">
+            <RxCross1 onClick={Cross} className="ModulNoneX" />
+            <Link
+              onClick={homeOn}
+              className={homePages == "Active" ? "p_text_active" : "p_text"}
+              to="/"
+            >
               Главная
             </Link>
-            <Link onClick={courseOn} className={coursePages == "Active" ? "p_text_active" : "p_text"} to="/course">
+            <Link
+              onClick={courseOn}
+              className={coursePages == "Active" ? "p_text_active" : "p_text"}
+              to="/course"
+            >
               Курсы
             </Link>
-            <Link onClick={schoolsOn} className={schoolsPages == "Active" ? "p_text_active" : "p_text"} to="/schools">
+            <Link
+              onClick={schoolsOn}
+              className={schoolsPages == "Active" ? "p_text_active" : "p_text"}
+              to="/schools"
+            >
               Школы
             </Link>
-            <Link onClick={discountOn} className={discountPages == "Active" ? "p_text_active" : "p_text"} to="/feedback">
+            <Link
+              onClick={discountOn}
+              className={discountPages == "Active" ? "p_text_active" : "p_text"}
+              to="/feedback"
+            >
               Акции
             </Link>
-            <Link onClick={blogOn} className={blogPages == "Active" ? "p_text_active" : "p_text"} to="/reviews">
+            <Link
+              onClick={blogOn}
+              className={blogPages == "Active" ? "p_text_active" : "p_text"}
+              to="/reviews"
+            >
               Блог
             </Link>
           </div>
         }
       </div>
       <div className="button_container">
-        <Link to="/compare">
-          <img onClick={noneOn2} className="trade_img" src={izoPages == "Active" ? tradeImg2 : tradeImg} alt="" />
+        <Link>
+          <img
+            onClick={noneOn2}
+            className="trade_img"
+            src={izoPages == "Active" ? tradeImg2 : tradeImg}
+            alt=""
+          />
         </Link>
       </div>
       <div className="search_container">
@@ -154,7 +185,12 @@ const Header = () => {
           placeholder="Искать курсы"
         />
       </div>
-      <div className="Hamburger_Modulus"><RxHamburgerMenu onClick={Hammburger} style={{width:"40px" , height:"60px" , marginLeft:"75px"}}/></div>
+      <div className="Hamburger_Modulus">
+        <RxHamburgerMenu
+          onClick={Hammburger}
+          style={{ width: "40px", height: "60px", marginLeft: "75px" }}
+        />
+      </div>
       <div className="cnt_ath_btn">
         {localstorage ? (
           <Link onClick={noneOn} to={"/cabinet"}>

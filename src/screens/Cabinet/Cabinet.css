@@ -334,7 +334,7 @@
 
 .InputDanni2 {
     width: 300px;
-    margin-left: 30px !important
+    margin-left: 0px !important
 }
 
 .InputDanni3 {
@@ -345,7 +345,7 @@
 .InputDanni4 {
     width: 300px;
     margin-top: -40px !important;
-    margin-left: 30px !important;
+    margin-left: 0px !important;
 }
 
 .InputDanni5 {
@@ -355,13 +355,12 @@
 
 .InputDanni6 {
     width: 300px;
-    margin-top: -150px !important;
     margin-left: 350px !important;
 }
 
 .Password_Open {
     position: absolute;
-    top: 175px;
+    top: 165px;
     right: 110px;
     font-size: 18px;
 }
@@ -523,6 +522,9 @@
         margin-left: -10px !important;
         margin-top: -100px !important;
     }
+    .h6_name_and_surname {
+        font-size: 20px;
+    }
 
     .InputDanni4 {
         width: 200px;
@@ -567,7 +569,6 @@
         width: 150px;
         margin-left: -1px;
     }
-
 
     .Edit_Input1 {
         width: 220px !important;
