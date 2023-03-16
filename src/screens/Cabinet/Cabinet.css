@@ -1,3 +1,4 @@
+
 .Cabinet {
     width: 98vw;
     height: 100vh;
@@ -337,7 +338,9 @@
 
 .InputDanni2 {
     width: 300px;
-    margin-left: 30px !important
+    position: absolute;
+    top: -95px;
+    left: 310px;
 }
 
 .InputDanni3 {
@@ -347,8 +350,9 @@
 
 .InputDanni4 {
     width: 300px;
-    margin-top: -40px !important;
-    margin-left: 30px !important;
+    position: absolute;
+    left: 310px;
+    top: -155px;
 }
 
 .InputDanni5 {
@@ -359,14 +363,15 @@
 
 .InputDanni6 {
     width: 300px;
-    margin-top: -150px !important;
-    margin-left: 350px !important;
+    position: absolute;
+    left: 310px;
+    top: -243px;
 }
 
 .Password_Open {
     position: absolute;
-    top: 175px;
-    right: 110px;
+    left: 670px;
+    top: 135px;
     font-size: 18px;
 }
 
@@ -529,9 +534,6 @@
         margin-left: -10px !important;
         margin-top: -100px !important;
     }
-    .h6_name_and_surname {
-        font-size: 20px;
-    }
 
     .InputDanni4 {
         width: 200px;
@@ -576,6 +578,7 @@
         width: 50vw;
         margin-left: -1px;
     }
+
 
     .Edit_Input1 {
         width: 220px !important;
@@ -639,7 +642,7 @@
         font-size: 25px;
     }
 
-    .Edit_Input5_eye_Open {
+.Edit_Input5_eye_Open {
         position: absolute;
         top: 640px;
         left: 330px;

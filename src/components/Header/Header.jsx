@@ -8,6 +8,7 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { toast } from "react-toastify";
+import { border } from "@mui/system";
 
 const Header = () => {
   const [auth, setAuth] = useState(false);
@@ -47,10 +48,9 @@ const Header = () => {
       setSchoolsPages("none");
       setDiscountPages("none");
       setBlogPages("none");
-
+      naviget("/compare")
       setIzoPages("Active");
       setProfPages("none");
-      naviget("/compare");
     } else {
       toast.error("Вы не зарегестрировались!");
     }
@@ -168,14 +168,14 @@ const Header = () => {
         }
       </div>
       <div className="button_container">
-        <Link>
+        <button style={{border: "none"}}>
           <img
             onClick={noneOn2}
             className="trade_img"
             src={izoPages == "Active" ? tradeImg2 : tradeImg}
             alt=""
           />
-        </Link>
+        </button>
       </div>
       <div className="search_container">
         <img className="loupe_img" src={loupeImg} alt="" />
