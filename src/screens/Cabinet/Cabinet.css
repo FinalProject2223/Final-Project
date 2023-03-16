@@ -332,45 +332,52 @@
     width: 300px;
 }
 
+
+
+
 .InputDanni2 {
     width: 300px;
-    margin-left: 0px !important
+    margin-left: 30px !important
 }
 
 .InputDanni3 {
     width: 300px;
-    margin-top: -40px !important;
+    margin-top: -110px !important;
 }
 
 .InputDanni4 {
     width: 300px;
     margin-top: -40px !important;
-    margin-left: 0px !important;
+    margin-left: 30px !important;
 }
 
 .InputDanni5 {
     width: 300px;
-    margin-top: -30px !important;
+    position: absolute;
+    top: -150px;
 }
 
 .InputDanni6 {
     width: 300px;
+    margin-top: -150px !important;
     margin-left: 350px !important;
 }
 
 .Password_Open {
     position: absolute;
-    top: 165px;
+    top: 175px;
     right: 110px;
     font-size: 18px;
 }
 
 .Password_Closed {
     position: absolute;
-    top: 175px;
-    right: 110px;
+    left: 670px;
+    top: 135px;
     font-size: 18px;
 }
+
+
 
 .Edit_Input1 {
     width: 400px !important;
@@ -559,14 +566,14 @@
     }
 
     .Cabinet__RightContent__Data_Dani__Input {
-        padding: 0;
-        width: 240px;
+        width: 50vw;
         text-align: center;
         padding: 0px 0px 0px 30px;
+        display: flex;
     }
 
     .Cabinet__RightContent__Data_Dani__Img {
-        width: 150px;
+        width: 50vw;
         margin-left: -1px;
     }
 
@@ -656,8 +663,9 @@
         box-sizing: border-box;
         margin-left: 30px;
     }
+
     .input_change_syn {
-        width: 600px ;
+        width: 600px;
         height: 40px;
         background: #06283d;
         border-radius: 16px;
@@ -669,7 +677,7 @@
     }
 
     .input_change_syn_red {
-        width: 600px ;
+        width: 600px;
         height: 40px;
         background: #f70202;
         border-radius: 16px;
@@ -678,6 +686,52 @@
         margin-top: 10px;
         border: none;
     }
+
+    .InputDanni2 {
+        width: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .InputDanni3 {
+        width: 300px;
+        margin-top: -100px !important;
+    }
+
+    .InputDanni4 {
+        width: 300px;
+        position: absolute;
+        top: 0px;
+        left: 0;
+    }
+
+    .InputDanni5 {
+        width: 300px;
+        margin-top: 0px !important;
+    }
+
+    .InputDanni6 {
+        width: 300px;
+        position: absolute;
+        top: -50px;
+        left: 0;
+    }
+
+    .Password_Open {
+        position: absolute;
+        top:231px;
+        left: 180px;
+        font-size: 18px;
+    }
+
+    .Password_Closed {
+        position: absolute;
+        top:231px;
+        left: 180px;
+        font-size: 18px;
+    }
+
 }
 
 @media only screen and (max-width:992px) {}
