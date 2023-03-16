@@ -1,3 +1,4 @@
+
 .Cabinet {
     width: 98vw;
     height: 100vh;
@@ -641,7 +642,7 @@
         font-size: 25px;
     }
 
-    .Edit_Input5_eye_Open {
+.Edit_Input5_eye_Open {
         position: absolute;
         top: 640px;
         left: 330px;

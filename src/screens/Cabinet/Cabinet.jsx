@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./Cabinet.css";
 import { HiOutlineHome, HiOutlineAcademicCap } from "react-icons/hi";
@@ -22,6 +23,7 @@ export default function Cabinet() {
   const [Password3, setPassword3] = useState("password");
 
   const selector = useSelector((state) => state.auth);
+  console.log(selector);
   const navigate = useNavigate();
 
   const [DataPages, setDataPages] = useState("inline");
@@ -80,7 +82,7 @@ export default function Cabinet() {
   }
 
   function DeleteAkk() {
-    axios.delete(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
+    axios.delete(`ttps://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`)
         localStorage.removeItem("User");
         navigate("/");
         document.location.reload();
@@ -134,7 +136,7 @@ export default function Cabinet() {
       toast.success("Изменение успешно завершено");
     }
 
-    if (PassowrdPut != null) {
+if (PassowrdPut != null) {
       axios
         .put(
           `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`,
@@ -172,6 +174,14 @@ export default function Cabinet() {
     localStorage.removeItem("User");
     navigate("/");
     document.location.reload();
+  }
+  function DeleteAkk() {
+    axios.delete(`https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}` , {
+
+    })
+    navigate("/");
+    document.location.reload();
+    localStorage.removeItem("User");
   }
 
   return (
@@ -228,7 +238,7 @@ export default function Cabinet() {
         </h3>
       </div>
 
-      <div className="Cabinet__RightContent">
+<div className="Cabinet__RightContent">
         <div
           style={{ display: `${DataPages}` }}
           className="Cabinet__RightContent__Data_Dani"
@@ -322,7 +332,7 @@ export default function Cabinet() {
 
         <div style={{ display: `${CoursesPages}` }}>salom</div>
 
-        <div style={{ display: `${AdditionsPages}` }}>
+        <div style={{ display:`${AdditionsPages}` }}>
           <h1 style={{ marginLeft: "60px" }}>Добавить курсы:</h1>
           <div className="Course_Add">
             <BsPlusCircle style={{ fontSize: "130px", cursor: "pointer" }} />
@@ -335,7 +345,7 @@ export default function Cabinet() {
           </div>
         </div>
 
-        <div classnmae="settings_pages" style={{ display: `${SettingsPages}`, boxSizing: "border-box" }}>
+<div classnmae="settings_pages" style={{ display: `${SettingsPages}`, boxSizing: "border-box" }}>
           <h2 style={{ marginLeft: "50px" }}>Настройки</h2>
           <TextField
             id="standard-read-only-input"

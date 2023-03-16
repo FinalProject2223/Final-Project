@@ -223,18 +223,32 @@
     font-size: 8px;
   }
   .div_divchik {
-    font-size: 10px;
+    font-size: 8px;
   }
   .inst {
-    font-size: 15px;
+    font-size: 20px;
+    margin: 2px;
   }
-  .father_categorias p{
-font-size: 10px;
+  .footer_categoria{
+font-size: 9px;
+margin: 10px 0px;
+  }
+  .glav_p  {
+    font-size: 12px;
   }
   .subscribe_us p {
     font-size: 10px;
   }
+  .social_icons {
+    display: flex;
+
+  }
   .title_text_us p {
     font-size: 13px;
+    
+  }
+  .tts{
+    margin-left: 10%;
+    
   }
 }
