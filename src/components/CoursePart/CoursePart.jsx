@@ -16,6 +16,9 @@ const CoursePart = () => {
   const [coursesPerPage] = useState(4);
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.auth);
+  
+  const naviget = useNavigate();
+  let localstorage = JSON.parse(localStorage.getItem("User"));
 
   const [Data, setData] = useState([]);
   const [Data2, setData2] = useState([]);
@@ -138,38 +141,45 @@ const CoursePart = () => {
   function Izobraniya(params) {
     // dispatch({type:"IZOBRANIYA" , peolad:{...params}})
 
-    console.log(Izo, "=>Yashqardan");
+    // console.log(Izo, "=>Yashqardan");
 
-    axios
-      .get(
-        `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`
-      )
-      .then((res) => {
-        console.log(res.data);
-        let Data = res.data.DataFavorites.find((item) => {
-          return item.id == params.id;
+    if(localstorage){
+      axios
+        .get(
+          `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`
+        )
+        .then((res) => {
+          console.log(res.data);
+          let Data = res.data.DataFavorites.find((item) => {
+            return item.id == params.id;
+          });
+          Izo = res.data.DataFavorites;
+          if (Data) {
+            toast.error("Уже добавлен в избранные");
+          } else {
+            Izo.push(params);
+            axios
+              .put(
+                `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`,
+                {
+                  DataFavorites: Izo,
+                }
+              )
+              .then((res) => {
+                console.log(res.data);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+            toast.success("Добавлено в избранные");
+          }
         });
-        Izo = res.data.DataFavorites;
-        if (Data) {
-          toast.error("Уже добавлен в избранные");
-        } else {
-          Izo.push(params);
-          axios
-            .put(
-              `https://63905b3f65ff41831110b776.mockapi.io/api/users/${selector.id}`,
-              {
-                DataFavorites: Izo,
-              }
-            )
-            .then((res) => {
-              console.log(res.data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-          toast.success("Добавлено в избранные");
-        }
-      });
+    }
+    else {
+      toast.error("Вы не зарегестрировались!");
+      naviget("/SingInPages")
+    }
+
   }
 
   return (

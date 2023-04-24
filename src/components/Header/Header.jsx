@@ -50,6 +50,7 @@ const Header = () => {
       setProfPages("none");
     } else {
       toast.error("Вы не зарегестрировались!");
+      naviget("/SingInPages")
     }
   }
 
